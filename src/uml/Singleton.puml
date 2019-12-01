@@ -1,0 +1,3 @@
+@startuml Singleton
+class Magasin
+@enduml
