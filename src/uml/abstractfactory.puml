@@ -2,7 +2,9 @@
 
 skinparam class {
     BackgroundColor<<holo>> #9bca9d
-	BackgroundColor<<factory>> #70baf4
+    BackgroundColor<<factoryholo>> #70baf4
+    BackgroundColor<<material>> #0bca9d
+	BackgroundColor<<factorymaterial>> #00baf4
 }
 
 class HoloButton <<holo>> {
@@ -15,9 +17,25 @@ class HoloDatePicker <<holo>> {
     + select():String
 }
 
-class HoloFactory <<factory>>{
+class HoloFactory <<factoryholo>>{
     + createButton(): HoloButton
     + createDatePicker(): HoloDatePicker
     + createLabel(): HoloLabel
+}
+
+class MaterialButton <<material>> {
+    + click(): String
+}
+class MaterialLabel <<material>> {
+    + show():String
+}
+class MaterialPicker <<material>> {
+    + select():String
+}
+
+class MaterialFactory <<factorymaterial>>{
+    + createButton(): MaterialButton
+    + createDatePicker(): MaterialDatePicker
+    + createLabel(): MaterialLabel
 }
 @enduml
