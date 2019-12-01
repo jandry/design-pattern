@@ -1,0 +1,27 @@
+@startuml Singleton
+
+skinparam class {
+    BackgroundColor<<librarie>> #9bca9d
+    BackgroundColor<<application>> #0bca9d
+}
+
+class GestionMachineACafe <<librarie>> {
+    - machine: MachineACafe
+}
+note bottom of GestionMachineACafe
+  Package de la librairie
+end note
+
+class MachineACafe <<application>> 
+note "Package de l'application" as NoteApplication
+NoteApplication - MachineACafe
+NoteApplication - Application
+
+class Application <<application>> {
+    - gestionnaire: GestionMachineACafe
+}
+
+Application o-- GestionMachineACafe
+GestionMachineACafe o-- MachineACafe
+
+@enduml
