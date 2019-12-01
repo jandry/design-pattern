@@ -1,14 +1,11 @@
 package com.tetras.material;
 
-public class MaterialDatePicker {
+import com.tetras.generic.DatePicker;
 
-    private String name = "MaterialDatePicker";
+public class MaterialDatePicker extends DatePicker {
 
     public MaterialDatePicker() {
-        System.out.println(name + " created");
+        super("MaterialDatePicker");
     }
 
-    public String select() {
-        return name + " selected";
-    }
 }

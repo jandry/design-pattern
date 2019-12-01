@@ -1,0 +1,34 @@
+@startuml AbstractFactory
+
+skinparam class {
+    BackgroundColor<<1>> #9bca9d
+    BackgroundColor<<2>> #0bca9d
+}
+abstract class ProductA
+abstract class ProductB
+abstract class AbstractFactory {
+    + createProductA(): ProductA
+    + createProductB(): ProductB
+}
+
+class ProductA1 <<1>>
+ProductA <|-- ProductA1
+class ProductA2 <<2>>
+ProductA <|-- ProductA2
+
+class ProductB1 <<1>>
+ProductB <|-- ProductB1
+class ProductB2 <<2>>
+ProductB <|-- ProductB2
+
+class ConcreteFactory1 <<1>> 
+AbstractFactory <|-- ConcreteFactory1
+note bottom of ConcreteFactory1
+  Manipule seulement des ProductA1 & ProductB1
+end note
+class ConcreteFactory2 <<2>>
+AbstractFactory <|-- ConcreteFactory2
+note bottom of ConcreteFactory2
+  Manipule seulement des ProductA2 & ProductB2
+end note
+@enduml

@@ -2,40 +2,50 @@
 
 skinparam class {
     BackgroundColor<<holo>> #9bca9d
-    BackgroundColor<<factoryholo>> #70baf4
     BackgroundColor<<material>> #0bca9d
-	BackgroundColor<<factorymaterial>> #00baf4
+	BackgroundColor<<holofactory>> #70baf4
+	BackgroundColor<<materialfactory>> #00baf4
 }
-
-class HoloButton <<holo>> {
+abstract class Component {
+    - name: String
+    + Component(name: String)
+    + getName(): String
+}
+abstract class Button {
     + click(): String
 }
-class HoloDateLabel <<holo>> {
+Component <|-- Button
+abstract class Label {
     + show():String
 }
-class HoloDatePicker <<holo>> {
+Component <|-- Label
+abstract class DatePicker {
     + select():String
 }
-
-class HoloFactory <<factoryholo>>{
-    + createButton(): HoloButton
-    + createDatePicker(): HoloDatePicker
-    + createLabel(): HoloLabel
+Component <|-- DatePicker
+abstract class AbstractFactory {
+    + createButton(): Button
+    + createDatePicker(): DatePicker
+    + createLabel(): Label
 }
 
-class MaterialButton <<material>> {
-    + click(): String
-}
-class MaterialLabel <<material>> {
-    + show():String
-}
-class MaterialPicker <<material>> {
-    + select():String
-}
+class HoloButton <<holo>>
+Button <|-- HoloButton
+class HoloLabel <<holo>>
+Label <|-- HoloLabel
+class HoloDatePicker <<holo>>
+DatePicker <|-- HoloDatePicker
 
-class MaterialFactory <<factorymaterial>>{
-    + createButton(): MaterialButton
-    + createDatePicker(): MaterialDatePicker
-    + createLabel(): MaterialLabel
-}
+class HoloFactory <<holofactory>>
+AbstractFactory <|-- HoloFactory
+
+class MaterialButton <<material>>
+Button <|-- MaterialButton
+class MaterialLabel <<material>>
+Label <|-- MaterialLabel
+class MaterialDatePicker <<material>>
+DatePicker <|-- MaterialDatePicker
+
+class MaterialFactory <<materialfactory>>
+AbstractFactory <|-- MaterialFactory
 @enduml

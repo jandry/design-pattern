@@ -1,16 +1,23 @@
 package com.tetras.material;
 
-public class MaterialFactory {
+import com.tetras.generic.AbstractFactory;
+import com.tetras.generic.Button;
+import com.tetras.generic.DatePicker;
+import com.tetras.generic.Label;
 
-    public MaterialDatePicker createMaterialDatePicker() {
+public class MaterialFactory extends AbstractFactory {
+    @Override
+    public DatePicker createDatePicker() {
         return new MaterialDatePicker();
     }
 
-    public MaterialLabel createMaterialLabel() {
+    @Override
+    public Label createLabel() {
         return new MaterialLabel();
     }
 
-    public MaterialButton createMaterialButton() {
+    @Override
+    public Button createButton() {
         return new MaterialButton();
     }
 }
