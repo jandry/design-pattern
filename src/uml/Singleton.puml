@@ -1,3 +1,7 @@
 @startuml Singleton
-class Magasin
+
+class Magasin {
+    {static} - instance: Magasin
+    {static} + getInstance(): Magasin
+}
 @enduml

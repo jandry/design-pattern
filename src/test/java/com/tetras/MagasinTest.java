@@ -10,8 +10,8 @@ class MagasinTest {
     @Test
     void testMagasinSingleton() {
 
-        Magasin monMagasin1 = new Magasin();
-        Magasin monMagasin2 = new Magasin();
+        Magasin monMagasin1 = Magasin.getInstance();
+        Magasin monMagasin2 = Magasin.getInstance();
         assertEquals(monMagasin1, monMagasin2);
     }
 }
