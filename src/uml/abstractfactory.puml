@@ -1,0 +1,23 @@
+@startuml AbstractFactory
+
+skinparam class {
+    BackgroundColor<<holo>> #9bca9d
+	BackgroundColor<<factory>> #70baf4
+}
+
+class HoloButton <<holo>> {
+    + click(): String
+}
+class HoloDateLabel <<holo>> {
+    + show():String
+}
+class HoloDatePicker <<holo>> {
+    + select():String
+}
+
+class HoloFactory <<factory>>{
+    + createButton(): HoloButton
+    + createDatePicker(): HoloDatePicker
+    + createLabel(): HoloLabel
+}
+@enduml
