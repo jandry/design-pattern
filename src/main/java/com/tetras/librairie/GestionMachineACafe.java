@@ -1,4 +1,4 @@
-package com.tetras.library;
+package com.tetras.librairie;
 
 import com.tetras.application.MachineACafe;
 

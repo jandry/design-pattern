@@ -1,6 +1,6 @@
 package com.tetras.application;
 
-import com.tetras.library.GestionMachineACafe;
+import com.tetras.librairie.GestionMachineACafe;
 
 public class Application {
 

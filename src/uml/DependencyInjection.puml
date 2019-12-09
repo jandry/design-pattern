@@ -5,20 +5,18 @@ skinparam class {
     BackgroundColor<<application>> #0bca9d
 }
 
-class GestionMachineACafe <<librarie>> {
-    - machine: MachineACafe
+package "com.tetras.library" #9bca0d {
+    class GestionMachineACafe <<librarie>> {
+        - machine: MachineACafe
+    }
 }
-note bottom of GestionMachineACafe
-  Package de la librairie
-end note
 
-class MachineACafe <<application>> 
-note "Package de l'application" as NoteApplication
-NoteApplication - MachineACafe
-NoteApplication - Application
 
-class Application <<application>> {
-    - gestionnaire: GestionMachineACafe
+package "com.tetras.application" #0bca0d {
+    class MachineACafe <<application>> 
+    class Application <<application>> {
+        - gestionnaire: GestionMachineACafe
+    }
 }
 
 Application o-- GestionMachineACafe

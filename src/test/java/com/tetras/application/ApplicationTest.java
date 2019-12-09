@@ -2,7 +2,7 @@ package com.tetras.application;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.tetras.library.GestionMachineACafe;
+import com.tetras.librairie.GestionMachineACafe;
 
 import org.junit.jupiter.api.Test;
 
