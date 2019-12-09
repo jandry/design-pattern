@@ -5,7 +5,7 @@ skinparam class {
     BackgroundColor<<application>> #0bca9d
 }
 
-package "com.tetras.library" #9bca0d {
+package "com.tetras.librarie" #9bca0d {
     class GestionMachineACafe <<librarie>> {
         - machine: MachineACafe
     }
