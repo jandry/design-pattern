@@ -1,0 +1,8 @@
+@startuml
+Application -> ServiceInfoEleve: récupère nom élève 1
+Application -> ServiceInfoEleve: récupère nom élève 2
+Application -> ServiceInfoEleve: récupère nom élève 3
+Application -> ServiceInfoEleve: récupère prenom élève 1
+Application -> ServiceInfoEleve: récupère prenom élève 2
+Application -> ServiceInfoEleve: récupère prenom élève 3
+@enduml
