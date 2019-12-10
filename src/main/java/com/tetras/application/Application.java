@@ -1,11 +1,9 @@
 package com.tetras.application;
 
-import com.tetras.librairie.ServiceInfoEleve;
-
 public class Application {
 
     public void start() {
-        ServiceInfoEleve service = new ServiceInfoEleve();
+        ServiceInfoEleveCache service = new ServiceInfoEleveCache();
         System.out.println("Nom eleve 1 " + service.getInformationEleve(1).getNom());
         System.out.println("Nom eleve 2 " + service.getInformationEleve(2).getNom());
         System.out.println("Nom eleve 3 " + service.getInformationEleve(3).getNom());

@@ -1,8 +1,7 @@
 @startuml
-Application -> ServiceInfoEleve: récupère nom élève 1
-Application -> ServiceInfoEleve: récupère nom élève 2
-Application -> ServiceInfoEleve: récupère nom élève 3
-Application -> ServiceInfoEleve: récupère prenom élève 1
-Application -> ServiceInfoEleve: récupère prenom élève 2
-Application -> ServiceInfoEleve: récupère prenom élève 3
+Application -> ServiceInfoEleveCache: récupère élève
+ServiceInfoEleveCache -> ServiceInfoEleveCache: test presence élève dans le cache
+ServiceInfoEleveCache -> ServiceInfoEleve: si élève non présent récupère met en cache
+ServiceInfoEleveCache -> Application: retourne élève
+
 @enduml

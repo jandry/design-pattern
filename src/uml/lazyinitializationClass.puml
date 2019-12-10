@@ -12,9 +12,14 @@ package com.tetras.application #DDDDDD {
   class Application { 
       + start()
   }
-  Application .. ServiceInfoEleve : utilise
+  class ServiceInfoEleveCache { 
+    - cache : Map<int,Eleve>  
+    + getInformationEleve(int) : Eleve
+  }
 }
 
+Application .. ServiceInfoEleveCache : utilise
+ServiceInfoEleveCache .. ServiceInfoEleve : utilise
 
 
 @enduml
