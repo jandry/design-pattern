@@ -1,4 +1,4 @@
-@startuml
+@startuml LazyInitialization
 Application -> ServiceInfoEleveCache: récupère élève
 ServiceInfoEleveCache -> ServiceInfoEleveCache: test presence élève dans le cache
 ServiceInfoEleveCache -> ServiceInfoEleve: si élève non présent récupère met en cache
