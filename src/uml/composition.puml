@@ -1,0 +1,11 @@
+@startuml
+class Carre {
+    + dessiner() :void
+}
+class Dessin {
+    + dessiner() :void
+}
+class Rond {
+    + dessiner() :void
+}
+@enduml
