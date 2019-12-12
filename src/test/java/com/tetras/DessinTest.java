@@ -33,7 +33,10 @@ public class DessinTest {
         writer.println("Rond dessiné");
         writer.println("Carré dessiné");
         writer.println("Dessin dessiné");
-        new Dessin().dessiner();
+        Dessin dessin = new Dessin();
+        dessin.ajouter(new Rond());
+        dessin.ajouter(new Carre());
+        dessin.dessiner();
         assertEquals(out.toString(), outContent.toString());
     }
 }

@@ -1,11 +1,16 @@
-@startuml
-class Carre {
-    + dessiner() :void
+@startuml interfaceAlias -- componentAlias : label <<stereotype>>
+interface Forme {
+     + dessiner() :void   
 }
+class Carre
 class Dessin {
-    + dessiner() :void
+    + ajouter(Forme forme): Forme
 }
-class Rond {
-    + dessiner() :void
-}
+class Rond
+
+Dessin "1" *-- "many" Forme : contains
+
+Forme <|-- Carre
+Forme <|-- Dessin
+Forme <|-- Rond
 @enduml
