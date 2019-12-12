@@ -1,11 +1,13 @@
-@startuml
+@startuml Composite
 class Carre {
-    + dessiner() :void
-}
-class Dessin {
     + dessiner() :void
 }
 class Rond {
     + dessiner() :void
+}
+class Dessin {
+    + dessiner():void
+    + ajouter(Rond): void
+    + ajouter(Carre): void
 }
 @enduml
