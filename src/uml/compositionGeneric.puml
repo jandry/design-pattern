@@ -1,0 +1,16 @@
+@startuml Composite
+interface Forme {
+     + dessiner() :void   
+}
+class Carre
+class Rond
+class Dessin {
+    + ajouter(Forme): void
+}
+
+Dessin "1" *-- "many" Forme : contains
+
+Forme <|-- Carre
+Forme <|-- Dessin
+Forme <|-- Rond
+@enduml
