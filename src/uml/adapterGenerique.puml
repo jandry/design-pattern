@@ -1,0 +1,24 @@
+@startuml Adapter
+
+package library #DDDDDD {
+    class Adaptee {
+        + specificOperation(): void
+    }
+}
+
+package application {
+    interface Target {
+        + operation(): void
+    }
+    class Adapter {
+        + operation(): void - uses specificOperation
+    } 
+    class Client 
+
+    Adapter ..|> Target    
+    Adapter --|> Adaptee
+
+    Client ..> Target : uses operation
+}
+
+@enduml

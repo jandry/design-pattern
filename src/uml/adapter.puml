@@ -17,9 +17,13 @@ package com.tetras.application {
     class Humain {
 
     } 
+    class CanardToTriathleteAdapter {
+    } 
     class Organisateur 
 
     Humain ..|> Triathlete
+    CanardToTriathleteAdapter ..|> Triathlete    
+    CanardToTriathleteAdapter --|> Canard
 
     Organisateur ..> Triathlete : uses
 }
