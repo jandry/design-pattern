@@ -1,17 +1,19 @@
 @startuml Factory
 class Client
-class MariaDbCommandExecutor {
+interface CommandExecutor {
      + connect(host, port,user,password):void  
      + execute(query): Result  
      + close(): void
 }
-class OracleCommandExecutor {
-     + connect(host, port,user,password):void  
-     + execute(query): Result  
-     + close(): void
+class MariaDbCommandExecutor
+class OracleCommandExecutor
+class Factory {
+     getExecutor(TypeDb type): CommandExecutor
 }
 
+CommandExecutor <|.. MariaDbCommandExecutor
+CommandExecutor <|..OracleCommandExecutor
 
-Client ..> OracleCommandExecutor : uses
+Client ..> Factory : uses
 
 @enduml
