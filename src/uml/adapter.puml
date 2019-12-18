@@ -1,0 +1,27 @@
+@startuml Adapter
+
+package com.tetras.librarie #DDDDDD {
+    class Canard {
+        - distanceEnMetre: int
+        + nager(distanceEnMetre: int): void  
+        + voler(distanceEnMetre: int): void  
+        + marcher(distanceEnMetre: int): void
+        + getDistanceParcourueEnMetre(): int
+    }
+}
+
+package com.tetras.application {
+    interface Triathlete {
+        + faireUnTriathlon(): void
+    }
+    class Humain {
+
+    } 
+    class Organisateur 
+
+    Humain ..|> Triathlete
+
+    Organisateur ..> Triathlete : uses
+}
+
+@enduml
