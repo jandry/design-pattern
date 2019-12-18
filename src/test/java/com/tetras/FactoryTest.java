@@ -9,17 +9,20 @@ public class FactoryTest {
 
     @Test
     public void testOracle() {
-        OracleCommandExecutor executor = new OracleCommandExecutor();
+        CommandExecutor executor = CommandExecutorFactory.getCommandExecutor(DbType.oracle);
         assertTrue(executor instanceof OracleCommandExecutor);
-        executor.connect("localhost", 1521, "toto", "password");
-        assertNotNull(executor.execute("query"));
-        executor.close();
+        assertExecutor(executor);
     }
 
     @Test
     public void testMariaDb() {
-        MariaDbCommandExecutor executor = new MariaDbCommandExecutor();
+        CommandExecutor executor = CommandExecutorFactory.getCommandExecutor(DbType.mariaDb);
         assertTrue(executor instanceof MariaDbCommandExecutor);
+        assertExecutor(executor);
+    }
+
+    private void assertExecutor(CommandExecutor executor) {
+
         executor.connect("localhost", 1521, "toto", "password");
         assertNotNull(executor.execute("query"));
         executor.close();

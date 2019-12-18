@@ -1,6 +1,6 @@
 package com.tetras;
 
-public class OracleCommandExecutor {
+public class OracleCommandExecutor implements CommandExecutor {
 
     public void connect(String host, int port, String user, String password) {
 

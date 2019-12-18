@@ -1,6 +1,6 @@
 package com.tetras;
 
-public class MariaDbCommandExecutor {
+public class MariaDbCommandExecutor implements CommandExecutor {
 
     public void connect(String host, int port, String user, String password) {
 
