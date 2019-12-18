@@ -1,13 +1,13 @@
 @startuml Factory
 class Client
-interface CommandExecutorFactory {
+interface CommandExecutor {
      + connect(host, port,user,password):void  
      + execute(query): Result  
      + close(): void
 }
 class MariaDbCommandExecutor
 class OracleCommandExecutor
-class Factory {
+class CommandExecutorFactory {
      # getCommandExecutor(TypeDb type): CommandExecutor
 }
 enum TypeDb
@@ -15,6 +15,6 @@ enum TypeDb
 CommandExecutor <|.. MariaDbCommandExecutor
 CommandExecutor <|..OracleCommandExecutor
 
-Client ..> Factory : uses
+Client ..> CommandExecutorFactory : uses
 
 @enduml

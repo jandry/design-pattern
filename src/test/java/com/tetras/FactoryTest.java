@@ -7,6 +7,13 @@ import org.junit.jupiter.api.Test;
 
 public class FactoryTest {
 
+    private void assertExecutor(CommandExecutor executor) {
+
+        executor.connect("localhost", 1521, "toto", "password");
+        assertNotNull(executor.execute("query"));
+        executor.close();
+    }
+
     @Test
     public void testOracle() {
         CommandExecutor executor = CommandExecutorFactory.getCommandExecutor(DbType.oracle);
@@ -21,10 +28,4 @@ public class FactoryTest {
         assertExecutor(executor);
     }
 
-    private void assertExecutor(CommandExecutor executor) {
-
-        executor.connect("localhost", 1521, "toto", "password");
-        assertNotNull(executor.execute("query"));
-        executor.close();
-    }
 }
