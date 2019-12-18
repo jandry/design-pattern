@@ -12,7 +12,7 @@ package com.tetras.application #DDDDDD {
   class Application { 
       + start()
   }
-  Application .. ServiceInfoEleve : utilise
+  Application ..> ServiceInfoEleve : use
 }
 
 
