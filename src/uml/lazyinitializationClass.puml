@@ -18,8 +18,8 @@ package com.tetras.application #DDDDDD {
   }
 }
 
-Application .. ServiceInfoEleveCache : utilise
-ServiceInfoEleveCache .. ServiceInfoEleve : utilise
+Application ..> ServiceInfoEleveCache : use
+ServiceInfoEleveCache ..> ServiceInfoEleve : use
 
 
 @enduml
