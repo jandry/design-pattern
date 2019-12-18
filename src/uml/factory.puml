@@ -1,0 +1,17 @@
+@startuml Factory
+class Client
+class MariaDbCommandExecutor {
+     + connect(host, port,user,password):void  
+     + execute(query): Result  
+     + close(): void
+}
+class OracleCommandExecutor {
+     + connect(host, port,user,password):void  
+     + execute(query): Result  
+     + close(): void
+}
+
+
+Client ..> OracleCommandExecutor : uses
+
+@enduml
