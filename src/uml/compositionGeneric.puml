@@ -1,16 +1,21 @@
 @startuml Composite
-interface Forme {
+class Client {
      + dessiner() :void   
 }
-class Carre
-class Rond
-class Dessin {
-    + ajouter(Forme): void
+interface Component {
+     + execute(): String
 }
+class Composite {
+     + addChild(child: Component): void
+     + removeChildAt(index: int): void
+     + getremoveChild(index: int): Component     
+}
+class Leaf
 
-Dessin "1" *-- "many" Forme : contains
+Client ..> Component : uses
 
-Forme <|-- Carre
-Forme <|-- Dessin
-Forme <|-- Rond
+Composite "1" *-- "many" Component : contains
+
+Component <|-- Leaf
+Component <|-- Composite
 @enduml
