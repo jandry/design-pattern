@@ -6,12 +6,12 @@ package com.tetras;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MagasinTest {
+class SupermanTest {
     @Test
-    void testMagasinSingleton() {
+    void testSingleton() {
 
-        Magasin monMagasin1 = new Magasin();
-        Magasin monMagasin2 = new Magasin();
-        assertEquals(monMagasin1, monMagasin2);
+        Superman monSuperman1 = new Superman();
+        Superman monSuperman2 = new Superman();
+        assertEquals(monSuperman1, monSuperman2);
     }
 }
