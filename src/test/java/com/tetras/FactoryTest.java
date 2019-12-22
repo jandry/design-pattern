@@ -1,30 +1,28 @@
 package com.tetras;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
 public class FactoryTest {
 
-    private void assertExecutor(CommandExecutor executor) {
+    private void assertExecutor(MaitreJedi executor) {
 
-        executor.connect("localhost", 1521, "toto", "password");
-        assertNotNull(executor.execute("query"));
-        executor.close();
+        executor.mediter();
+        executor.combattre();
     }
 
     @Test
     public void testOracle() {
-        CommandExecutor executor = CommandExecutorFactory.getCommandExecutor(DbType.oracle);
-        assertTrue(executor instanceof OracleCommandExecutor);
+        MaitreJedi executor = MaitreJediFactory.getMaitreJedi(MaitreType.yoda);
+        assertTrue(executor instanceof Yoda);
         assertExecutor(executor);
     }
 
     @Test
     public void testMariaDb() {
-        CommandExecutor executor = CommandExecutorFactory.getCommandExecutor(DbType.mariaDb);
-        assertTrue(executor instanceof MariaDbCommandExecutor);
+        MaitreJedi executor = MaitreJediFactory.getMaitreJedi(MaitreType.lukeSkywalker);
+        assertTrue(executor instanceof LukeSkywalker);
         assertExecutor(executor);
     }
 

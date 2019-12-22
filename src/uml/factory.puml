@@ -1,20 +1,19 @@
 @startuml Factory
-class Client
-interface CommandExecutor {
-     + connect(host, port,user,password):void  
-     + execute(query): Result  
-     + close(): void
+interface MaitreJedi {
+     + mediter():void  
+     + combattre(): void
 }
-class MariaDbCommandExecutor
-class OracleCommandExecutor
-class CommandExecutorFactory {
-     # getCommandExecutor(TypeDb type): CommandExecutor
+class LukeSkywlaker 
+class Yoda 
+class Player
+class MaitreJediFactory {
+     # getMaitreJedi(TypeMaitre type): MaitreJedi
 }
-enum TypeDb
+enum TypeMaitre
 
-CommandExecutor <|.. MariaDbCommandExecutor
-CommandExecutor <|..OracleCommandExecutor
+MaitreJedi <|.. LukeSkywlaker
+MaitreJedi <|..Yoda
 
-Client ..> CommandExecutorFactory : uses
+Player ..> MaitreJedi : joue avec
 
 @enduml
