@@ -1,17 +1,15 @@
 @startuml Factory
-class Client
-class MariaDbCommandExecutor {
-     + connect(host, port,user,password):void  
-     + execute(query): Result  
-     + close(): void
-}
-class OracleCommandExecutor {
-     + connect(host, port,user,password):void  
-     + execute(query): Result  
-     + close(): void
-}
 
+class LukeSkywlaker {
+     + mediter():void  
+     + combattre(): void
+}
+class Yoda {
+     + mediter():void  
+     + combattre(): void
+}
+class Player
 
-Client ..> OracleCommandExecutor : uses
+Player ..> LukeSkywlaker : joue avec
 
 @enduml
