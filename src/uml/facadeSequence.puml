@@ -1,0 +1,13 @@
+@startuml FacadeSequence
+Harry -> PieceMolduArgent: prendre
+Harry -> Recipient: prendre
+Harry -> Recipient: ajouter(PieceMolduArgent)
+Harry -> DoseUrineMusaraigne: prendre
+Harry -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
+Harry -> DoseUrineMusaraigne: prendre
+Harry -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
+Harry -> Harry: attendre 5mn
+Harry -> PieceMolduArgent: essuyer(FeuilleSecheTout)
+Harry -> PieceMolduArgent: transfomer
+PieceMolduArgent --> Harry: PieceOr
+@enduml

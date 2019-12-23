@@ -1,0 +1,22 @@
+@startuml Facade
+
+package com.tetras.ingredient #DDDDDD {
+    interface Ingredient
+    class DoseUrineMusaraigne
+    class FeuilleSecheTout
+}
+
+package com.tetras.materiel #AAAAAA {
+    class Recipient
+    class PieceMolduArgent
+    class PieceOr
+}
+
+package com.tetras.magicien #FFFFFF {
+    class Harry
+}
+DoseUrineMusaraigne ..|> Ingredient
+FeuilleSecheTout ..|> Ingredient
+PieceMolduArgent ..|> Ingredient
+
+@enduml
