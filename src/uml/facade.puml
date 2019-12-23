@@ -2,18 +2,32 @@
 
 package com.tetras.ingredient #DDDDDD {
     interface Ingredient
-    class DoseUrineMusaraigne
-    class FeuilleSecheTout
+    class DoseUrineMusaraigne {
+        {static} prendre() : DoseUrineMusaraigne
+    }
+    class FeuilleSecheTout {
+        {static} prendre() : FeuilleSecheTout
+    }
 }
 
 package com.tetras.materiel #AAAAAA {
-    class Recipient
-    class PieceMolduArgent
+    class Recipient {
+        {static} prendre() : Recipient
+        ajouter(ingredient: Ingredient)
+    }
+    class PieceMolduArgent {
+        {static} prendre() : PieceMolduArgent
+        couvrir(dose: DoseUrineMusaraigne)
+        essuyer(feuille: FeuilleSecheTout)
+        transformer() : PieceOr
+    }
     class PieceOr
 }
 
 package com.tetras.magicien #FFFFFF {
-    class Harry
+    class Harry {
+        attendre(minute: int)
+    }
 }
 DoseUrineMusaraigne ..|> Ingredient
 FeuilleSecheTout ..|> Ingredient
