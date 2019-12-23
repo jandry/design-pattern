@@ -7,7 +7,7 @@ Harry -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 Harry -> DoseUrineMusaraigne: prendre
 Harry -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 Harry -> Harry: attendre 5mn
-Harry -> PieceMolduArgent: essuyer(FeuilleSecheTout)
+[Harry -> PieceMolduArgent: essuyer(FeuilleSecheTout)
 Harry -> PieceMolduArgent: transfomer
 PieceMolduArgent --> Harry: PieceOr
 @enduml
