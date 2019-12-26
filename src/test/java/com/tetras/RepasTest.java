@@ -30,7 +30,11 @@ public class RepasTest {
 
     @Test
     public void testRepas() {
-        new Maman().appelerATable();
-        assertEquals("J'arrive", outContent.toString());
+        Ado bart = new Ado();
+        Enfant maggie = new Enfant();
+        Maman marge = new Maman();
+        marge.appelerATable(bart);
+        marge.appelerATable(maggie);
+        assertEquals("J'arriveuh !Je rampe", outContent.toString());
     }
 }

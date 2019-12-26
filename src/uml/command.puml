@@ -1,14 +1,23 @@
 @startuml Command
 
 class Maman {
-    monEnfant: Enfant
-    appelerATable()
+    appelerATable(personne: Personne)
 }
 
 class Enfant {
-    venirATable()
+    venirATableAQuatrePatte()
 }
 
-Maman-->Enfant: appelerATable->monEnfantvenirATable
+class Ado {
+    venirATableEnRalant()
+}
 
+interface Personne
+
+class ATableCommande {
+    execute(personne: Personne)
+}
+
+Enfant..|>Personne
+Ado..|>Personne
 @enduml
