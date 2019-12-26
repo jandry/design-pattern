@@ -1,4 +1,4 @@
-Remove me@startuml Proxy
+@startuml Command
 
 class Maman {
     monEnfant: Enfant
