@@ -1,0 +1,14 @@
+Remove me@startuml Proxy
+
+class Maman {
+    monEnfant: Enfant
+    appelerATable()
+}
+
+class Enfant {
+    venirATable()
+}
+
+Maman-->Enfant: appelerATable->monEnfantvenirATable
+
+@enduml
