@@ -10,8 +10,6 @@ public class Serie implements Iterator<Episode> {
 
     private List<Episode> listeEpisode = new ArrayList<>();
 
-    private Iterator<Episode> iterator;
-
     public Serie(String nom) {
         this.nom = nom;
     }
@@ -30,17 +28,11 @@ public class Serie implements Iterator<Episode> {
 
     @Override
     public boolean hasNext() {
-        if (iterator == null)
-            iterator = listeEpisode.iterator();
-        return iterator.hasNext();
+        return false;
     }
 
     @Override
     public Episode next() {
-        return iterator.next();
-    }
-
-    public void resetIterator() {
-        iterator = listeEpisode.iterator();
+        return null;
     }
 }
