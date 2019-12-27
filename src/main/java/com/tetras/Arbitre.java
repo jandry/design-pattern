@@ -17,6 +17,7 @@ public class Arbitre implements Observer {
 
     @Override
     public void update(Observable o, Object fait) {
+        analyser((FaitJeu) fait);
 
     }
 
