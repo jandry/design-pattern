@@ -1,0 +1,25 @@
+@startuml Observer
+
+class Observer {
+    + notify()
+}
+
+class Subject {
+    - collectionObserver: Collection<Observer>
+    + register(observer: Observer)
+    + unregister(observer: Observer)
+    + notifyObservers()
+}
+note bottom of Subject
+  notifyObservers()
+  for observer in collectionObserver
+    observer.notify()
+end note
+
+class ConcreteObserverA
+class ConcreteObserverB
+
+ConcreteObserverA..|>Observer
+ConcreteObserverB..|>Observer
+
+@enduml

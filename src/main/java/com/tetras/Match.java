@@ -8,9 +8,14 @@ public class Match {
     List<Observer<FaitJeu>> listeObserver = new ArrayList<>();
 
     public FaitJeu genererFait() {
-        return new FaitJeu();
+        FaitJeu fait = new FaitJeu();
+        for (Observer<FaitJeu> observer : listeObserver) {
+            observer.notify(fait);
+        }
+        return fait;
     }
 
     public void register(Observer<FaitJeu> observer) {
+        listeObserver.add(observer);
     }
 }

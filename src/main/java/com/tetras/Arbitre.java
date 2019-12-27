@@ -15,5 +15,6 @@ public class Arbitre implements Observer<FaitJeu> {
 
     @Override
     public void notify(FaitJeu fait) {
+        analyser(fait);
     }
 }
