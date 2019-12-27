@@ -1,21 +1,12 @@
 package com.tetras;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Observable;
 
-public class Match {
-
-    List<Observer<FaitJeu>> listeObserver = new ArrayList<>();
+public class Match extends Observable {
 
     public FaitJeu genererFait() {
         FaitJeu fait = new FaitJeu();
-        for (Observer<FaitJeu> observer : listeObserver) {
-            observer.notify(fait);
-        }
         return fait;
     }
 
-    public void register(Observer<FaitJeu> observer) {
-        listeObserver.add(observer);
-    }
 }

@@ -1,0 +1,27 @@
+@startuml Observer
+
+interface Observer {
+    + update(observable: Observable, fait: Object)
+}
+
+class Observable {
+    + addObserver(observer: Observer)
+    + setChanged()
+    + notifyObservers()
+}
+
+class Match {
+    + genererFait(): FaitJeu
+    + register(observer: Observer<FaitJeu>)
+}
+
+class FaitJeu
+
+class Arbitre {
+    + analyser(fait: FaitJeu)
+}
+
+Arbitre..|>Observer
+Match--|>Observable
+
+@enduml

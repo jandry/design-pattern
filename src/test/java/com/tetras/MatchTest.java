@@ -31,10 +31,10 @@ public class MatchTest {
     @Test
     public void testMatch() {
         Match match = new Match();
-        match.register(new Arbitre());
-        match.register(new Arbitre());
-        match.register(new Arbitre());
-        match.register(new Arbitre());
+        match.addObserver(new Arbitre());
+        match.addObserver(new Arbitre());
+        match.addObserver(new Arbitre());
+        match.addObserver(new Arbitre());
         match.genererFait();
 
         String result = outContent.toString() + errContent.toString();

@@ -1,8 +1,10 @@
 package com.tetras;
 
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Random;
 
-public class Arbitre implements Observer<FaitJeu> {
+public class Arbitre implements Observer {
 
     public void analyser(final FaitJeu fait) {
         final Random random = new Random();
@@ -14,7 +16,8 @@ public class Arbitre implements Observer<FaitJeu> {
     }
 
     @Override
-    public void notify(FaitJeu fait) {
-        analyser(fait);
+    public void update(Observable o, Object fait) {
+
     }
+
 }
