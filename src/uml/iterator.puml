@@ -14,4 +14,11 @@ class Episode {
     + toString(): String
 }
 
+class Iterator<E> {
+    + next(): E
+    + hasNext(): boolean
+}
+
+Serie..|>Iterator
+
 @enduml
