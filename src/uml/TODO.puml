@@ -1,0 +1,11 @@
+@startuml Todo
+
+class Class1 {
+    appelerATable(personne: Personne)
+}
+
+interface Interface1
+
+Class1..|>Interface1
+
+@enduml
