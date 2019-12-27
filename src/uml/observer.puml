@@ -1,0 +1,13 @@
+@startuml Observer
+
+class Match {
+    + genererFait(): FaitJeu
+}
+
+class FaitJeu
+
+class Arbitre {
+    + analyser(fait: FaitJeu)
+}
+
+@enduml
