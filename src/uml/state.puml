@@ -1,0 +1,8 @@
+@startuml Todo
+
+class TonyStark {
+    + courir(): String
+    + sauter(): String
+}
+
+@enduml
