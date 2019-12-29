@@ -1,8 +1,20 @@
 @startuml Todo
 
 class TonyStark {
+    - state: State
+    + changeState(state: State)
+}
+
+interface State  {
     + courir(): String
     + sauter(): String
 }
+
+class NormalState
+class IronmanState
+
+NormalState..|>State
+IronmanState..|>State
+TonyStark..|>State
 
 @enduml

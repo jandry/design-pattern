@@ -11,5 +11,13 @@ public class TonyStarkTest {
         TonyStark tony = new TonyStark();
         assertEquals("50cm", tony.sauter());
         assertEquals("7m/s", tony.courir());
+        IronmanState ironman = new IronmanState();
+        tony.changeState(ironman);
+        assertEquals("vole", tony.sauter());
+        assertEquals("vole", tony.courir());
+        NormalState normal = new NormalState();
+        tony.changeState(normal);
+        assertEquals("50cm", tony.sauter());
+        assertEquals("7m/s", tony.courir());
     }
 }
