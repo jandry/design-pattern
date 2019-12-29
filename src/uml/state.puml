@@ -1,4 +1,4 @@
-@startuml Todo
+@startuml State
 
 class TonyStark {
     - state: State
@@ -13,8 +13,9 @@ interface State  {
 class NormalState
 class IronmanState
 
-NormalState..|>State
-IronmanState..|>State
-TonyStark..|>State
+NormalState ..|> State
+IronmanState ..|> State
+TonyStark ..|> State
+TonyStark o-- State
 
 @enduml
