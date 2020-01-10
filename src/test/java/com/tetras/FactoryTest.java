@@ -13,14 +13,14 @@ public class FactoryTest {
     }
 
     @Test
-    public void testOracle() {
+    public void testYoda() {
         MaitreJedi executor = MaitreJediFactory.getMaitreJedi(MaitreType.yoda);
         assertTrue(executor instanceof Yoda);
         assertExecutor(executor);
     }
 
     @Test
-    public void testMariaDb() {
+    public void testLuke() {
         MaitreJedi executor = MaitreJediFactory.getMaitreJedi(MaitreType.lukeSkywalker);
         assertTrue(executor instanceof LukeSkywalker);
         assertExecutor(executor);
