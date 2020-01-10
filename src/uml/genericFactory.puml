@@ -1,6 +1,6 @@
 @startuml GenericFactory
 class Client
-interface Compenent {
+interface Component {
      + operation(): void
 }
 class ConcreteComponent1
@@ -10,8 +10,8 @@ class Factory {
 }
 enum TypeComponent
 
-Compenent <|.. ConcreteComponent1
-Compenent <|..ConcreteComponent2
+Component <|.. ConcreteComponent1
+Component <|..ConcreteComponent2
 
 Client ..> Factory : uses
 
