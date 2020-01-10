@@ -10,7 +10,7 @@ skinparam class {
 class HoloButton <<holo>> {
     + click(): String
 }
-class HoloDateLabel <<holo>> {
+class HoloLabel <<holo>> {
     + show():String
 }
 class HoloDatePicker <<holo>> {
@@ -29,7 +29,7 @@ class MaterialButton <<material>> {
 class MaterialLabel <<material>> {
     + show():String
 }
-class MaterialPicker <<material>> {
+class MaterialDatePicker <<material>> {
     + select():String
 }
 
@@ -38,4 +38,9 @@ class MaterialFactory <<factorymaterial>>{
     + createDatePicker(): MaterialDatePicker
     + createLabel(): MaterialLabel
 }
+
+HoloButton -up[hidden]- MaterialButton
+HoloLabel -up[hidden]- MaterialLabel
+HoloDatePicker -up[hidden]- MaterialDatePicker
+HoloFactory -up[hidden]- MaterialFactory
 @enduml
