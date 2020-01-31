@@ -36,9 +36,10 @@ public class DessinTest {
         //
         StringWriter out = new StringWriter();
         PrintWriter writer = new PrintWriter(out);
-        writer.println("Dessin dessiné");
         writer.println("Rond dessiné");
         writer.println("Carré dessiné");
+        writer.println("Dessin dessiné");
+        //
         assertEquals(out.toString(), outContent.toString());
     }
 }
