@@ -1,0 +1,6 @@
+@startuml ProxySequence
+
+Client -> Proxy: faireQuelquechose
+Proxy --> ObjetReel: faireQuelquechose
+
+@enduml

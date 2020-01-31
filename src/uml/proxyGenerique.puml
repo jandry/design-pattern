@@ -1,0 +1,19 @@
+@startuml Proxy
+
+class Client
+
+interface Sujet {
+    faireQuelquechose()
+}
+class Proxy {
+    sujetReel: ObjetReel
+}
+class ObjetReel
+
+Client-->Sujet
+Proxy-->ObjetReel
+
+Proxy..|>Sujet
+ObjetReel..|>Sujet
+
+@enduml
