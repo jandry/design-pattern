@@ -30,9 +30,9 @@ public class DessinTest {
     public void testDessiner() {
         StringWriter out = new StringWriter();
         PrintWriter writer = new PrintWriter(out);
+        writer.println("Dessin dessiné");
         writer.println("Rond dessiné");
         writer.println("Carré dessiné");
-        writer.println("Dessin dessiné");
         Dessin dessin = new Dessin();
         dessin.ajouter(new Rond());
         dessin.ajouter(new Carre());
