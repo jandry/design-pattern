@@ -1,13 +1,13 @@
 @startuml FacadeSequence
-Harry -> Recipient: new
-Harry -> PieceMolduArgent: prendre
-Harry -> Recipient: ajouter(PieceMolduArgent)
-Harry -> DoseUrineMusaraigne: prendre
-Harry -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
-Harry -> DoseUrineMusaraigne: prendre
-Harry -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
-Harry -> Harry: attendre 5mn
-Harry -> PieceMolduArgent: essuyer(FeuilleSecheTout)
-Harry -> PieceMolduArgent: transfomer
-PieceMolduArgent --> Harry: PieceOr
+PotionTest -> PieceMolduArgent: prendre
+PotionTest -> Recipient : prendre
+PotionTest -> Recipient: ajouter(PieceMolduArgent)
+PotionTest -> DoseUrineMusaraigne: prendre
+PotionTest -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
+PotionTest -> DoseUrineMusaraigne: prendre
+PotionTest -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
+PotionTest -> PotionTest: attendre(5mn)
+PotionTest -> PieceMolduArgent: essuyer(FeuilleSecheTout)
+PotionTest -> PieceMolduArgent: transfomer
+PieceMolduArgent --> PotionTest: PieceOr
 @enduml

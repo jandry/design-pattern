@@ -24,8 +24,8 @@ package com.tetras.materiel #AAAAAA {
     class PieceOr
 }
 
-package com.tetras.magicien #FFFFFF {
-    class Harry {
+package com.tetras #FFFFFF {
+    class PotionTest {
         attendre(minute: int)
     }
 }
