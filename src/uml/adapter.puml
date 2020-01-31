@@ -23,7 +23,7 @@ package com.tetras.application {
 
     Humain ..|> Triathlete
     CanardToTriathleteAdapter ..|> Triathlete    
-    CanardToTriathleteAdapter --|> Canard
+    CanardToTriathleteAdapter *-- Canard
 
     Organisateur ..> Triathlete : uses
 }

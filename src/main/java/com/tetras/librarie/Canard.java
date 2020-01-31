@@ -1,6 +1,6 @@
 package com.tetras.librarie;
 
-public class Canard {
+public final class Canard {
     private int distanceEnMetre;
 
     public void nager(int distanceEnMetre) {

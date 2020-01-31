@@ -2,13 +2,18 @@ package com.tetras.application;
 
 import com.tetras.librarie.Canard;
 
-public class CanardToTriathleteAdapter extends Canard implements Triathlete {
+public class CanardToTriathleteAdapter implements Triathlete {
+
+    private Canard canard = new Canard();
 
     @Override
     public void faireUnTriathlon() {
-        nager(1500);
-        voler(40000);
-        marcher(10000);
+        canard.nager(1500);
+        canard.voler(40000);
+        canard.marcher(10000);
     }
 
+    public int getDistanceParcourueEnMetre() {
+        return canard.getDistanceParcourueEnMetre();
+    }
 }
