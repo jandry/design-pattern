@@ -28,15 +28,17 @@ public class DessinTest {
 
     @Test
     public void testDessiner() {
+        //
+        Dessin dessin = new Dessin();
+        dessin.ajouter(new Rond());
+        dessin.ajouter(new Carre());
+        dessin.dessiner();
+        //
         StringWriter out = new StringWriter();
         PrintWriter writer = new PrintWriter(out);
         writer.println("Dessin dessiné");
         writer.println("Rond dessiné");
         writer.println("Carré dessiné");
-        Dessin dessin = new Dessin();
-        dessin.ajouter(new Rond());
-        dessin.ajouter(new Carre());
-        dessin.dessiner();
         assertEquals(out.toString(), outContent.toString());
     }
 }
