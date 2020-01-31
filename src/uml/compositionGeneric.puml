@@ -1,6 +1,5 @@
 @startuml Composite
 class Client {
-     + dessiner() :void   
 }
 interface Component {
      + execute(): String
