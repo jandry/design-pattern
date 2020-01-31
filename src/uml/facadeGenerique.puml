@@ -1,0 +1,33 @@
+@startuml FacadeGenerique
+
+package com.tetras.package1 #AAAAAA {
+    class Class1 {
+        faireUnTruc()
+    }
+}
+
+package com.tetras.package2 #CCCCCC {
+    class Class2 {
+        faireQuelqueChose()
+    }
+}
+
+package com.tetras.library #888888 {
+    class Facade {
+        {static} faire()
+    }
+
+}
+
+Client1 --> Facade: utilise
+Client2 --> Facade: utilise
+
+note right of Facade
+    faire() {
+        Class1 c1 = new Class1();
+        Class2 c2 = new Class2();
+        c1.faireUnTruc();
+        c2.faireQuelqueChose()
+    }
+end note
+@enduml

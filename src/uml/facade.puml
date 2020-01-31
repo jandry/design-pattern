@@ -24,9 +24,10 @@ package com.tetras.materiel #AAAAAA {
     class PieceOr
 }
 
-package com.tetras #FFFFFF {
-    class PotionTest {
-        attendre(minute: int)
+package com.tetras.potion #FFFFFF {
+    class PotionBrilleToutFacade {
+        {static} - attendre(minute: int)
+        {static} + transformer(piece: PieceMolduArgent)
     }
 }
 DoseUrineMusaraigne ..|> Ingredient
