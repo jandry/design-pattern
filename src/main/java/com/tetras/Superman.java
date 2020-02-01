@@ -2,7 +2,14 @@ package com.tetras;
 
 public class Superman {
 
-    private static Superman instance = new Superman();
+    private static Superman instance = null;
+
+    public static Superman getInstance() {
+        if (instance == null) {
+            instance = new Superman();
+        }
+        return instance;
+    }
 
     private Superman() {
         try {
@@ -10,10 +17,6 @@ public class Superman {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static Superman getInstance() {
-        return instance;
     }
 
 }

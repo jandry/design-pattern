@@ -5,37 +5,15 @@ package com.tetras;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
 import org.junit.jupiter.api.Test;
 
 class SupermanTest {
 
-    private List<Superman> list = new ArrayList<>();
-
-    class SupermanInstanciator implements Runnable {
-
-        @Override
-        public void run() {
-            list.add(Superman.getInstance());
-        }
-    };
-
     @Test
     void testSingleton() throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-
-        executor.submit(new SupermanInstanciator());
-        executor.submit(new SupermanInstanciator());
-
-        executor.awaitTermination(2, TimeUnit.SECONDS);
-
-        assertEquals(2, list.size());
-        assertEquals(list.get(0), list.get(1));
+        Superman superman1 = Superman.getInstance();
+        Superman superman2 = Superman.getInstance();
+        assertEquals(superman1, superman2);
     }
 
 }
