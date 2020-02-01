@@ -3,7 +3,7 @@ package com.tetras;
 public class Superman {
 
     // volatile protège de la lecture lors d'une écriture
-    private static volatile Superman instance = new Superman();
+    private static volatile Superman instance;
 
     private Superman() {
         try {
