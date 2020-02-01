@@ -5,15 +5,55 @@ package com.tetras;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class SupermanTest {
 
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @BeforeEach
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @AfterEach
+    public void restoreStreams() {
+        System.setOut(originalOut);
+    }
+
+    class SupermanInstanciator implements Runnable {
+        @Override
+        public void run() {
+            System.out.println(Superman.getInstance());
+        }
+    };
+
     @Test
     void testSingleton() throws InterruptedException {
-        Superman superman1 = Superman.getInstance();
-        Superman superman2 = Superman.getInstance();
-        assertEquals(superman1, superman2);
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        executor.submit(new SupermanInstanciator());
+        executor.submit(new SupermanInstanciator());
+
+        executor.awaitTermination(2, TimeUnit.SECONDS);
+
+        while (outContent.size() == 0) {
+            // Wait sysout done
+            Thread.sleep(2);
+        }
+        //
+        String[] outputList = outContent.toString().split("\\n");
+        assertEquals(2, outputList.length);
+        assertEquals(outputList[0], outputList[1]);
     }
 
 }
