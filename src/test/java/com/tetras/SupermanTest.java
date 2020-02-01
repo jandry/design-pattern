@@ -5,23 +5,35 @@ package com.tetras;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class SupermanTest {
 
-    private List<Superman> list = new ArrayList<>();
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @BeforeEach
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @AfterEach
+    public void restoreStreams() {
+        System.setOut(originalOut);
+    }
 
     class SupermanInstanciator implements Runnable {
-
         @Override
         public void run() {
-            list.add(Superman.getInstance());
+            System.out.println(Superman.getInstance());
         }
     };
 
@@ -34,8 +46,14 @@ class SupermanTest {
 
         executor.awaitTermination(2, TimeUnit.SECONDS);
 
-        assertEquals(2, list.size());
-        assertEquals(list.get(0), list.get(1));
+        while (outContent.size() == 0) {
+            // Wait sysout done
+            Thread.sleep(2);
+        }
+        //
+        String[] outputList = outContent.toString().split("\\n");
+        assertEquals(2, outputList.length);
+        assertEquals(outputList[0], outputList[1]);
     }
 
 }
