@@ -26,13 +26,18 @@ public class Serie implements Iterator<Episode> {
         return getNom();
     }
 
+    private int indexIterator = -1;
+
     @Override
     public boolean hasNext() {
-        return false;
+        return (indexIterator + 1 < listeEpisode.size());
     }
 
     @Override
     public Episode next() {
-        return null;
+        if (hasNext()) {
+            indexIterator++;
+        }
+        return listeEpisode.get(indexIterator);
     }
 }
