@@ -15,6 +15,7 @@ class Episode {
 }
 
 class IteratorEpisode {
+    - indexIterator: int
     - listeEpisode: List<Episode>
 }
 
