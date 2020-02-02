@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Serie implements Iterator<Episode> {
+public class Serie implements Iterable<Episode>, Iterator<Episode> {
 
     private String nom;
 
@@ -40,4 +40,10 @@ public class Serie implements Iterator<Episode> {
         }
         return listeEpisode.get(indexIterator);
     }
+
+    @Override
+    public Iterator<Episode> iterator() {
+        return null;
+    }
+
 }

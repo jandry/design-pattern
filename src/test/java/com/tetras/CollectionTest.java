@@ -15,9 +15,15 @@ public class CollectionTest {
         starwars.ajouter(episode2);
         assertEquals("La Guerre des Etoiles", starwars.toString());
         String result = new String();
-        while (starwars.hasNext()) {
-            result += starwars.next().toString();
-            System.out.println(result);
+        for (Episode e : starwars) {
+            result += e.toString();
+            result += "\n";
+        }
+        assertEquals("La menace fantôme\nL'attaque des clones\n", result);
+        // Repeat
+        result = "";
+        for (Episode e : starwars) {
+            result += e.toString();
             result += "\n";
         }
         assertEquals("La menace fantôme\nL'attaque des clones\n", result);
