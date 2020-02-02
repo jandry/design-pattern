@@ -1,0 +1,34 @@
+@startuml Iterator
+
+class Serie {
+    - nom: String
+    - listeEpisode: List<Episode>
+    + ajouter(episode: Episode)
+    + getNom(): String
+    + toString(): String
+}
+
+class Episode {
+    + lire()
+    + getNom(): String
+    + toString(): String
+}
+
+class IteratorEpisode {
+    - listeEpisode: List<Episode>
+}
+
+interface Iterator<E> {
+    + next(): E
+    + hasNext(): boolean
+}
+
+interface Iterable<E> {
+    + iterator(): Iterator<E>
+}
+
+Serie..|>Iterable
+
+IteratorEpisode..|>Iterator
+
+@enduml

@@ -6,6 +6,11 @@ import java.util.List;
 
 public class Serie implements Iterable<Episode>, Iterator<Episode> {
 
+    @Override
+    public Iterator<Episode> iterator() {
+        return new IteratorEpisode(listeEpisode);
+    }
+
     private String nom;
 
     private List<Episode> listeEpisode = new ArrayList<>();
@@ -24,26 +29,6 @@ public class Serie implements Iterable<Episode>, Iterator<Episode> {
 
     public String toString() {
         return getNom();
-    }
-
-    private int indexIterator = -1;
-
-    @Override
-    public boolean hasNext() {
-        return (indexIterator + 1 < listeEpisode.size());
-    }
-
-    @Override
-    public Episode next() {
-        if (hasNext()) {
-            indexIterator++;
-        }
-        return listeEpisode.get(indexIterator);
-    }
-
-    @Override
-    public Iterator<Episode> iterator() {
-        return null;
     }
 
 }
