@@ -21,5 +21,13 @@ public class CollectionTest {
             result += "\n";
         }
         assertEquals("La menace fantôme\nL'attaque des clones\n", result);
+        // Retry
+        result = new String();
+        while (starwars.hasNext()) {
+            result += starwars.next().toString();
+            System.out.println(result);
+            result += "\n";
+        }
+        assertEquals("La menace fantôme\nL'attaque des clones\n", result);
     }
 }
