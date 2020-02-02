@@ -8,7 +8,7 @@ public class Serie implements Iterable<Episode> {
 
     @Override
     public Iterator<Episode> iterator() {
-        return new IteratorEpisode(listeEpisode);
+        return listeEpisode.iterator();
     }
 
     private String nom;
