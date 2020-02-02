@@ -1,0 +1,24 @@
+@startuml Iterator
+
+class Client
+
+class ConcreteAggregate
+
+class ConcreteIterator
+
+class Iterator<E> {
+    + next(): E
+    + hasNext(): boolean
+}
+
+class Iterable<E> {
+    + iterator(): Iterator<E>
+}
+
+ConcreteIterator..|>Iterator
+ConcreteAggregate..|>Iterable
+
+Client-->Iterator: utilise
+Client-->Iterable: récupère
+
+@enduml

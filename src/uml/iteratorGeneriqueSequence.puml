@@ -1,0 +1,10 @@
+@startuml IteratorSequence
+
+Client -> ConcreteAggregate: iterator()
+ConcreteAggregate -> ConcreteIterator: new
+Client <-- ConcreteAggregate: return iterator
+
+Client -> ConcreteIterator: [while hasNext] next()
+Client <-- ConcreteIterator: return element
+
+@enduml
