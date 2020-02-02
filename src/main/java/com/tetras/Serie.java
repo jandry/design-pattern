@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Serie implements Iterable<Episode>, Iterator<Episode> {
+public class Serie implements Iterable<Episode> {
 
     @Override
     public Iterator<Episode> iterator() {
