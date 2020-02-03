@@ -1,0 +1,10 @@
+@startuml Decorator
+
+Client->ConcreteComponent: new
+Client->ConcreteDecorator: new(ConcreteComponent)
+Client->ConcreteDecorator: nouvelleOperation()
+ConcreteDecorator->ConcreteComponent: ancienneOperation()
+ConcreteDecorator->ConcreteDecorator: code supplémentaire
+ConcreteDecorator-->Client
+
+@enduml

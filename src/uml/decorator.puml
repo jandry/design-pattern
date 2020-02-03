@@ -10,7 +10,14 @@ class SchtroumpfGrognon {
 class SchtroumpfCoquet {
 }
 
+class SchtroumpfDecorator {
+    - schtroumpf: Schtroumpf
+    + saluer()
+    + direAuRevoir()
+}
+
 SchtroumpfGrognon-|>Schtroumpf
 SchtroumpfCoquet-|>Schtroumpf
+SchtroumpfDecorator-|>Schtroumpf
 
 @enduml{}
