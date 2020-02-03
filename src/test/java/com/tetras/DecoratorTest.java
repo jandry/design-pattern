@@ -9,7 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class DecoratorTest {
     @Test
     void testDecorator() {
-        assertEquals("quelle beau chapeau", new SchtroumpfCoquet().discuter());
-        assertEquals("Groumpf#&", new SchtroumpfGrognon().discuter());
+        Schtroumpf coquet = new SchtroumpfCoquet();
+        Schtroumpf grognon = new SchtroumpfGrognon();
+        assertEquals("quelle beau chapeau", coquet.discuter());
+        assertEquals("Groumpf#&", grognon.discuter());
     }
 }
