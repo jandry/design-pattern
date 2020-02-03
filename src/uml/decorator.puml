@@ -1,0 +1,16 @@
+@startuml Decorator
+
+interface Schtroumpf {
+    + discuter()
+}
+
+class SchtroumpfGrognon {
+}
+
+class SchtroumpfCoquet {
+}
+
+SchtroumpfGrognon-|>Schtroumpf
+SchtroumpfCoquet-|>Schtroumpf
+
+@enduml{}
