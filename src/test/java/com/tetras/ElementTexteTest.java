@@ -16,8 +16,8 @@ public class ElementTexteTest {
         texte.add(new Liste("Mon element de liste"));
         texte.add(new Gras("Mon texte gras"));
 
-        assertEquals("Mon titre", texte.get(0).getTexte());
-        assertEquals("Mon element de liste", texte.get(1).getTexte());
-        assertEquals("Mon texte gras", texte.get(2).getTexte());
+        assertEquals("<h1>Mon titre</h1>", texte.get(0).getHtml());
+        assertEquals("<li>Mon element de liste</li>", texte.get(1).getHtml());
+        assertEquals("<b>Mon texte gras</b>", texte.get(2).getHtml());
     }
 }
