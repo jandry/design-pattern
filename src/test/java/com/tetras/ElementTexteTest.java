@@ -27,12 +27,17 @@ public class ElementTexteTest {
         System.setOut(originalOut);
     }
 
-    @Test
-    public void testElementTexte() {
+    private List<ElementTexte> initTextCase() {
         List<ElementTexte> texte = new ArrayList<>();
         texte.add(new Titre("Mon titre"));
         texte.add(new Liste("Mon element de liste"));
         texte.add(new Gras("Mon texte gras"));
+        return texte;
+    }
+
+    @Test
+    public void testHtmlTexte() {
+        List<ElementTexte> texte = initTextCase();
 
         HtmlVisitor htmlVisitor = new HtmlVisitor();
 
@@ -44,5 +49,21 @@ public class ElementTexteTest {
         assertEquals("<h1>Mon titre</h1>", result[0]);
         assertEquals("<ul>Mon element de liste</ul>", result[1]);
         assertEquals("<b>Mon texte gras</b>", result[2]);
+    }
+
+    @Test
+    public void testMarkdownTexte() {
+        List<ElementTexte> texte = initTextCase();
+
+        MarkdownVisitor htmlVisitor = new MarkdownVisitor();
+
+        texte.stream().forEach(t -> t.accept(htmlVisitor));
+
+        assertNotNull(outContent);
+        String[] result = outContent.toString().split("\\n");
+        assertEquals(3, result.length);
+        assertEquals("# Mon titre", result[0]);
+        assertEquals("* Mon element de liste", result[1]);
+        assertEquals("__Mon texte gras__", result[2]);
     }
 }

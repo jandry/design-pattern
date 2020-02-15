@@ -11,6 +11,10 @@ class HtmlVisitor
 
 Visitor <|.. HtmlVisitor
 
+class MarkdownVisitor
+
+Visitor <|.. MarkdownVisitor
+
 interface Visitable {
     + void accept(Visitor)
 }
