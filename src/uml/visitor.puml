@@ -1,0 +1,17 @@
+@startuml Visitor
+
+class Titre
+class Gras
+class Liste
+
+class ElementTexte {
+    - texte : String
+    + getTexte(): String
+}
+
+ElementTexte <|-- Liste
+ElementTexte <|-- Titre
+ElementTexte <|-- Gras
+
+
+@enduml
