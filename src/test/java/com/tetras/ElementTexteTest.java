@@ -39,11 +39,10 @@ public class ElementTexteTest {
         texte.stream().forEach(t -> t.accept(htmlVisitor));
 
         assertNotNull(outContent);
-        assertEquals("expected", outContent.toString());
-        String[] result = outContent.toString().split("/n");
+        String[] result = outContent.toString().split("\\n");
         assertEquals(3, result.length);
         assertEquals("<h1>Mon titre</h1>", result[0]);
-        assertEquals("<li>Mon element de liste</li>", result[1]);
+        assertEquals("<ul>Mon element de liste</ul>", result[1]);
         assertEquals("<b>Mon texte gras</b>", result[2]);
     }
 }

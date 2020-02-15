@@ -1,5 +1,20 @@
 @startuml Visitor
 
+interface Visitor {
+    + void visit(Visitable)
+    + void visit(Gras)
+    + void visit(Liste)
+    + void visit(Titre)
+}
+
+class HtmlVisitor
+
+Visitor <|.. HtmlVisitor
+
+interface Visitable {
+    + void accept(Visitor)
+}
+
 class Titre
 class Gras
 class Liste
@@ -9,6 +24,8 @@ class ElementTexte {
     + getTexte(): String
     + {abstract} getHtml(): String
 }
+
+Visitable <|.. ElementTexte
 
 ElementTexte <|-- Liste
 ElementTexte <|-- Titre

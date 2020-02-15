@@ -1,6 +1,6 @@
 package com.tetras;
 
-public class ElementTexte {
+public class ElementTexte implements Visitable {
 
     private String texte;
 
@@ -15,5 +15,4 @@ public class ElementTexte {
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
-
 }
