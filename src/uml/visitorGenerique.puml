@@ -1,0 +1,33 @@
+@startuml Visitor
+
+interface Visitor {
+    + void visitElement1(ConcreteElement1)
+    + void visitElement1(ConcreteElement2)
+}
+
+class ConcreteVisitor1
+
+Visitor <|.. ConcreteVisitor1
+
+class ConcreteVisitor2
+
+Visitor <|.. ConcreteVisitor2
+
+interface Visitable {
+    + void accept(Visitor)
+}
+
+class ConcreteElement1
+
+class ConcreteElement2
+
+abstract Element
+
+Visitable <|.. Element
+
+Element <|-- ConcreteElement1
+Element <|-- ConcreteElement2
+
+Client -> Element : uses
+
+@enduml

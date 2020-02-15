@@ -1,0 +1,20 @@
+@startuml Visitor
+
+
+participant Client order 10
+participant ConcreteElement1 order 20
+participant ConcreteElement2 order 20
+participant ConcreteVisitor1 order 30
+
+Client -> ConcreteVisitor1 : new
+Client <-- ConcreteVisitor1 : visitor
+
+Client -> ConcreteElement1 : accept(visitor)
+ConcreteElement1 -> ConcreteVisitor1 : visitElement1(this)
+ConcreteElement1 <- ConcreteVisitor1 : doSomething()
+
+Client -> ConcreteElement2 : accept(visitor)
+ConcreteElement2 -> ConcreteVisitor1 : visitElement1(this)
+ConcreteElement2 <- ConcreteVisitor1 : doSomethingElse()
+
+@enduml
