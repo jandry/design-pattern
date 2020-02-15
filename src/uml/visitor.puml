@@ -22,7 +22,6 @@ class Liste
 class ElementTexte {
     - texte : String
     + getTexte(): String
-    + {abstract} getHtml(): String
 }
 
 Visitable <|.. ElementTexte
