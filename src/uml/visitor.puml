@@ -4,7 +4,7 @@ class Titre
 class Gras
 class Liste
 
-class ElementTexte {
+abstract ElementTexte {
     - texte : String
     + getTexte(): String
     + {abstract} getHtml(): String
