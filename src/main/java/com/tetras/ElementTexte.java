@@ -1,6 +1,6 @@
 package com.tetras;
 
-public class ElementTexte {
+public abstract class ElementTexte {
 
     private String texte;
 
@@ -12,8 +12,6 @@ public class ElementTexte {
         return texte;
     }
 
-    public String getHtml() {
-        return texte;
-    }
+    public abstract String getHtml();
 
 }
