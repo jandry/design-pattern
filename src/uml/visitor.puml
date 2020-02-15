@@ -15,11 +15,19 @@ interface Visitable {
     + void accept(Visitor)
 }
 
-class Titre
-class Gras
-class Liste
+class Titre {
+    + void accept(Visitor)
 
-class ElementTexte {
+}
+class Gras {
+    + void accept(Visitor)
+}
+
+class Liste {
+    + void accept(Visitor)
+}
+
+abstract ElementTexte {
     - texte : String
     + getTexte(): String
 }

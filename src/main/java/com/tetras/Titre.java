@@ -6,4 +6,8 @@ public class Titre extends ElementTexte {
         super(texte);
     }
 
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
 }
