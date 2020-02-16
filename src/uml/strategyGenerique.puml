@@ -1,0 +1,17 @@
+@startuml Strategy
+
+class Context {
+    selectStrategy(Strategy)
+    operate()
+}
+
+interface Strategy {
+    + execute()
+}
+
+Context *-right- Strategy
+
+ConcreteStrategy1 .up.|> Strategy
+ConcreteStrategy2 .up.|> Strategy
+
+@enduml

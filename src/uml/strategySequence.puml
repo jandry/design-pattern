@@ -1,0 +1,18 @@
+@startuml Strategy
+
+participant Client order 10
+participant Context order 20
+participant ConcreteStrategy1 order 30
+participant ConcreteStrategy2 order 40
+
+Client -> ConcreteStrategy1 : new
+Client -> Context : selectStrategy(ConcreteStrategy1)
+Client -> Context : operate
+Context -> ConcreteStrategy1 : execute()
+
+Client -> ConcreteStrategy2 : new
+Client -> Context : selectStrategy(ConcreteStrategy2)
+Client -> Context : operate
+Context -> ConcreteStrategy2 : execute()
+
+@enduml
