@@ -2,9 +2,16 @@
 
 class Morceau {
     - nom
+    + creerMemento(): MementoMorceau
+    + restaurer(MementoMorceau)
+}
+
+class MementoMorceau {
+    - nom
 }
 
 class LecteurMusique {
+    - historiqueMorceau: List<MementoMorceau>
     + lire(Morceau)
     + lireMorceauPrecedent()
 }
