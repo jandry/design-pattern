@@ -1,0 +1,17 @@
+@startuml Strategy
+
+class Frank {
+    activerTourDeForce() : Eponge
+    activerEponge() : TourDeForce
+}
+
+interface Brawler
+
+interface StarPower
+
+Frank..|>Brawler
+
+TourDeForce..|>StarPower
+Eponge..|>StarPower
+
+@enduml
