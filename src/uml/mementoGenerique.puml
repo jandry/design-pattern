@@ -1,0 +1,20 @@
+@startuml Memento
+
+class Originator {
+    - state
+    + creerMemento(): Memento
+    + restaurer(Memento)
+}
+
+class Memento {
+    - state
+    + getState()
+    + setState()
+}
+
+class Client
+
+Client <-right-o Memento
+Originator .right.> Memento: utilise
+
+@enduml

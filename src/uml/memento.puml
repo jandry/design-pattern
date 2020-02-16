@@ -1,4 +1,4 @@
-@startuml Todo
+@startuml Memento
 
 class Morceau {
     - nom
