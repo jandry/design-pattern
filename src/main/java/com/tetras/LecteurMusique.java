@@ -6,4 +6,7 @@ public class LecteurMusique {
         System.out.println(morceau.getName());
     }
 
+	public void lireMorceauPrecedent() {
+	}
+
 }

@@ -36,12 +36,14 @@ public class LecteurMusiqueTest {
         lecteur.lire(cannonball);
         lecteur.lire(loser);
         lecteur.lire(walkOnTheWildSide);
+        lecteur.lireMorceauPrecedent();
         //
         assertNotNull(outContent);
         String[] result = outContent.toString().split("\\n");
-        assertEquals(3, result.length);
+        assertEquals(4, result.length);
         assertEquals("cannonball", result[0]);
         assertEquals("loser", result[1]);
         assertEquals("walk on wild side", result[2]);
+        assertEquals("loser", result[3]);
     }
 }
