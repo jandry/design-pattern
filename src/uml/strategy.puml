@@ -5,13 +5,4 @@ class Frank {
     activerEponge()
 }
 
-interface Brawler
-
-interface StarPower
-
-Frank .up.|> Brawler
-
-TourDeForce .up.|> StarPower
-Eponge .up.|> StarPower
-
 @enduml
