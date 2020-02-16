@@ -1,6 +1,6 @@
 package com.tetras.power;
 
-public class Eponge implements StarPower {
+public class Eponge implements StarPowerStrategy {
 
     @Override
     public void activer() {

@@ -1,17 +1,19 @@
 @startuml Strategy
 
 class Frank {
-    activerTourDeForce()
-    activerEponge()
 }
 
-interface Brawler
+interface Brawler {
+    + activerStarPower(StarPowerStrategy)
+}
 
-interface StarPower
+interface StarPowerStrategy {
+    + activer()
+}
 
 Frank .up.|> Brawler
 
-TourDeForce .up.|> StarPower
-Eponge .up.|> StarPower
+TourDeForce .up.|> StarPowerStrategy
+Eponge .up.|> StarPowerStrategy
 
 @enduml

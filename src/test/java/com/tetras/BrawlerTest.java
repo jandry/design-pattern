@@ -7,6 +7,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import com.tetras.brawler.Frank;
+import com.tetras.power.Eponge;
+import com.tetras.power.TourDeForce;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,8 +32,8 @@ public class BrawlerTest {
     @Test
     public void testStarPower() {
         Frank brawler = new Frank();
-        brawler.activerEponge();
-        brawler.activerTourDeForce();
+        brawler.activerStarPower(new Eponge());
+        brawler.activerStarPower(new TourDeForce());
 
         assertNotNull(outContent);
         String[] result = outContent.toString().split("\\n");

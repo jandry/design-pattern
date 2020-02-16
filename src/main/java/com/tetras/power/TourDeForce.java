@@ -1,6 +1,6 @@
 package com.tetras.power;
 
-public class TourDeForce implements StarPower {
+public class TourDeForce implements StarPowerStrategy {
 
     @Override
     public void activer() {

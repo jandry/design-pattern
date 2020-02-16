@@ -1,5 +1,5 @@
 package com.tetras.power;
 
-public interface StarPower {
+public interface StarPowerStrategy {
     void activer();
 }
