@@ -1,4 +1,4 @@
-@startuml Todo
+@startuml ChainOfResponsability
 
 class Class1 {
     appelerATable(personne: Personne)
