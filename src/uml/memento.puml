@@ -1,0 +1,11 @@
+@startuml Todo
+
+class Morceau {
+    - nom
+}
+
+class LecteurMusique {
+    + lire(Morceau)
+}
+
+@enduml
