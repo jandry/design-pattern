@@ -1,18 +1,18 @@
 package com.tetras;
 
 public class Morceau {
-    private String name;
+    private String nom;
 
     public String getName() {
-        return name;
+        return nom;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nom) {
+        this.nom = nom;
     }
 
-    public Morceau(String name) {
-        this.name = name;
+    public Morceau(String nom) {
+        this.nom = nom;
     }
 
 }
