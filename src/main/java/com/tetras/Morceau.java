@@ -3,11 +3,11 @@ package com.tetras;
 public class Morceau {
     private String nom;
 
-    public String getName() {
+    public String getNom() {
         return nom;
     }
 
-    public void setName(String nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
