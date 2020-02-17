@@ -1,15 +1,33 @@
 @startuml ChainOfResponsability
 
+interface Personnage
+
 class Thanos {
-    - List<PierreInfinite> gant
+    - gant: List<PierreInfinite>
     + recupererPierreInfinite(Temple): PierreInfinite
     + compterPierreGant(): int
 }
 
+Thanos .up.|> Personnage
+
 class Temple {
-    + recupererPierreInfinite() : PierreInfinite
+    - protecteurs: List<Avengers>
+    + ajouterProtecteur(Avengers)
+    + recupererPierreInfinite(DemandeRecuperationPierreInfinite) : PierreInfinite
+}
+
+class DemandeRecuperationPierreInfinite {
+    - demandeur: Personnage
 }
 
 class PierreInfinite
+
+interface Avengers {
+    + boolean gagneCombatContre(Personnage)
+}
+
+Ironman .up.|> Avenger
+Spiderman .up.|> Avenger
+Thor .up.|> Avenger
 
 @enduml

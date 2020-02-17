@@ -1,6 +1,9 @@
 @startuml ChainOfResponsability
 
-Thanos -> Temple : recupererPierreInfinite()
+Thanos -> DemandeRecuperationPierreInfinite : new
+Thanos <-- DemandeRecuperationPierreInfinite
+Thanos -> Temple : recupererPierreInfinite(DemandeRecuperationPierreInfinite)
+Temple -> Temple : tester Avengers
 Thanos <-- Temple : PierreInfinite 
 Thanos -> Thanos : ajouter PierreInfinite au gant
 
