@@ -1,0 +1,7 @@
+@startuml ChainOfResponsability
+
+Thanos -> Temple : recupererPierreInfinite()
+Thanos <-- Temple : PierreInfinite 
+Thanos -> Thanos : ajouter PierreInfinite au gant
+
+@enduml

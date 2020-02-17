@@ -1,11 +1,15 @@
 @startuml ChainOfResponsability
 
-class Class1 {
-    appelerATable(personne: Personne)
+class Thanos {
+    - List<PierreInfinite> gant
+    + recupererPierreInfinite(Temple): PierreInfinite
+    + compterPierreGant(): int
 }
 
-interface Interface1
+class Temple {
+    + recupererPierreInfinite() : PierreInfinite
+}
 
-Class1..|>Interface1
+class PierreInfinite
 
 @enduml
