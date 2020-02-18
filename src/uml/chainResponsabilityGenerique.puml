@@ -1,0 +1,18 @@
+@startuml ChainOfResponsability
+
+class Sender
+
+class Handler {
+    + handleRequest()
+}
+
+Handler -> Handler : successor
+
+Sender -> Handler : handler
+
+Receiver1 -up-|> Handler
+Receiver2 -up-|> Handler
+Receiver3 -up-|> Handler
+
+
+@enduml
