@@ -12,14 +12,20 @@ public class ThanosTest {
 
     @Test
     public void testPierreInfinite() {
-        Thanos thanos = new Thanos();
+
         Temple temple = new Temple();
         temple.ajouterProtecteur(new Spiderman());
         temple.ajouterProtecteur(new Thor());
         temple.ajouterProtecteur(new Ironman());
         //
+        BlackDwarf blackDwarf = new BlackDwarf();
+        blackDwarf.recupererPierreInfinite(temple);
+        //
+        assertEquals(0, blackDwarf.compterPierreGant());
+        //
+        Thanos thanos = new Thanos();
         thanos.recupererPierreInfinite(temple);
         //
-        assertEquals(0, thanos.compterPierreGant());
+        assertEquals(1, thanos.compterPierreGant());
     }
 }

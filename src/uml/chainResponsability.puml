@@ -1,6 +1,9 @@
 @startuml ChainOfResponsability
 
-interface Personnage
+interface Personnage {
+    + recupererPierreInfinite(Temple): PierreInfinite
+    + compterPierreGant(): int
+}
 
 class Thanos {
     - gant: List<PierreInfinite>
@@ -8,6 +11,10 @@ class Thanos {
     + compterPierreGant(): int
 }
 
+class BlackDwarf {
+}
+
+BlackDwarf .up.|> Personnage
 Thanos .up.|> Personnage
 
 class Temple {
