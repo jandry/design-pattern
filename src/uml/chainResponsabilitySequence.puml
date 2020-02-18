@@ -1,7 +1,10 @@
 @startuml ChainOfResponsability
 
-Sender -> Receiver1 : handleRequest
-Receiver1 -> Receiver2 : handleRequest
-Receiver2 -> Receiver3 : handleRequest
+Personnage -> DemandeRecuperationPierreInfinite : new
+Personnage <-- DemandeRecuperationPierreInfinite
+Personnage -> Temple : recupererPierreInfinite(DemandeRecuperationPierreInfinite)
+Temple -> Avengers : gagneCombatContre(Personnage)
+Temple <-- Avengers : false / true
+Personnage <-- Temple : PierreInfinite / null
 
 @enduml
