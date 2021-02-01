@@ -11,7 +11,7 @@ public class ApplicationTest {
     @Test
     public void testRun() {
         //
-        assertTimeout(Duration.ofSeconds(3), () -> {
+        assertTimeout(Duration.ofSeconds(1), () -> {
             new Application().start();
         });
 
