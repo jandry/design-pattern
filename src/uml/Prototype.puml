@@ -1,0 +1,13 @@
+@startuml Todo
+
+class Clone {
+    - nom : String
+    + Clone()
+    + equals(Object)
+}
+
+class TransportDeTroupes {
+    + sortirClone() : Clone
+}
+
+@enduml
