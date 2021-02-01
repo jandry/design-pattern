@@ -3,7 +3,7 @@ package com.tetras;
 import java.nio.charset.Charset;
 import java.util.Random;
 
-public class Clone implements Cloneable{
+public class Clone {
     private String nom;
 
     public String getNom() {
