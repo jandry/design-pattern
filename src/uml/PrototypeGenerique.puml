@@ -1,4 +1,4 @@
-@startuml Todo
+@startuml Prototype
 
 class Prototype {
     + clone() : Prototype
@@ -9,7 +9,7 @@ class Client {
 }
 
 
-Prototype <.. Client: prototype
+Client .r.> Prototype : prototype
 Prototype <|-- ConcretePrototype1
 Prototype <|-- ConcretePrototype2
 
