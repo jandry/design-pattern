@@ -1,7 +1,7 @@
 @startuml Proxy
 
 class Schtroumpf {
-    saluer(animal: Animal): String
+    + saluer(Animal): String
 }
 
 class SchtroumpfDouanier
@@ -9,7 +9,7 @@ class SchtroumpfDouanier
 Schtroumpf<|--SchtroumpfDouanier
 
 class Animal {
-    - name: String
+    - nom: String
 }
 
 class AnimalDangereux

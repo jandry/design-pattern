@@ -2,6 +2,6 @@ package com.tetras;
 
 public class Schtroumpf {
     public String saluer(Animal animal) {
-        return "Bonjour " + animal.getName();
+        return "Bonjour " + animal.getNom();
     }
 }

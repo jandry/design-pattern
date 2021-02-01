@@ -1,17 +1,13 @@
 package com.tetras;
 
 public class Animal {
-    private String name;
+    private String nom;
 
-    public String getName() {
-        return name;
+    public String getNom() {
+        return nom;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Animal(String name) {
-        this.name = name;
+    public Animal(String nom) {
+        this.nom = nom;
     }
 }
