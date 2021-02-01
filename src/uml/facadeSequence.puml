@@ -30,6 +30,8 @@ PotionBrilleToutFacade -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 PotionBrilleToutFacade -> PotionBrilleToutFacade: attendre(5mn)
 PotionBrilleToutFacade -> PieceMolduArgent: essuyer(FeuilleSecheTout)
 PotionBrilleToutFacade -> PieceMolduArgent: transfomer
-
+activate PieceMolduArgent
+PotionBrilleToutFacade <--> PieceMolduArgent: PieceOr
+deactivate PieceMolduArgent
 PotionBrilleToutFacade --> PotionTest: PieceOr
 @enduml

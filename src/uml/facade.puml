@@ -4,25 +4,25 @@ package com.tetras.ingredient #DDDDDD {
     interface Ingredient
 
     class DoseUrineMusaraigne {
-        {static} prendre() : DoseUrineMusaraigne
+        {static} + prendre() : DoseUrineMusaraigne
     }
 
     class FeuilleSecheTout {
-        {static} prendre() : FeuilleSecheTout
+        {static} + prendre() : FeuilleSecheTout
     }
 }
 
 package com.tetras.materiel #AAAAAA {
     class Recipient {
-        {static} prendre() : Recipient
-        ajouter(ingredient: Ingredient)
+        {static} + prendre() : Recipient
+        + ajouter(Ingredient)
     }
 
     class PieceMolduArgent {
-        {static} prendre() : PieceMolduArgent
-        couvrir(dose: DoseUrineMusaraigne)
-        essuyer(feuille: FeuilleSecheTout)
-        transformer() : PieceOr
+        {static} +  prendre() : PieceMolduArgent
+        + couvrir(DoseUrineMusaraigne)
+        + essuyer(FeuilleSecheTout)
+        + transformer(): PieceOr
     }
 
     class PieceOr
@@ -30,12 +30,12 @@ package com.tetras.materiel #AAAAAA {
 
 package com.tetras.potion #FFFFFF {
     class PotionBrilleToutFacade {
-        {static} - attendre(minute: int)
-        {static} + transformer(piece: PieceMolduArgent)
+        {static} - attendre(int)
+        {static} + transformer(PieceMolduArgent, Recipient, DoseUrineMusaraigne, DoseUrineMusaraigne, FeuilleSecheTout) : PieceOr
     }
 }
 DoseUrineMusaraigne ..|> Ingredient
 FeuilleSecheTout ..|> Ingredient
-PieceMolduArgent ..|> Ingredient
+PieceMolduArgent .u.|> Ingredient
 
 @enduml
