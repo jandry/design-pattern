@@ -28,8 +28,11 @@ public class Clone implements Cloneable{
         if (!this.getClass().getName().equals(objectToCompare.getClass().getName())) {
             return false;
         }
-        // TODO null check
-        return (this.getNom().equals(((Clone) objectToCompare).getNom()));
+        Clone cloneToCompare = (Clone) objectToCompare;
+        if (this.getNom()==null) {
+            return (cloneToCompare.getNom() ==null);
+        }
+        return (this.getNom().equals(cloneToCompare.getNom()));
     }
 
     public Clone clone() {
