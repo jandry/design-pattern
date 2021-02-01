@@ -1,0 +1,18 @@
+@startuml Todo
+
+class Clone {
+    - nom : String
+    + Clone()
+    + equals(Object)
+    + clone() : Clone
+}
+
+class TransportDeTroupes {
+    + sortirClone() : Clone
+}
+
+interface Cloneable
+
+Clone ..|> Cloneable
+
+@enduml
