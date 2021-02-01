@@ -1,19 +1,37 @@
 @startuml FacadeSequence
-PotionTest -> PieceMolduArgent: prendre
+actor PotionTest
+
+PotionTest -> PieceMolduArgent : prendre
+activate PotionTest
+activate PieceMolduArgent
 PotionTest <-- PieceMolduArgent: PieceMolduArgent
+deactivate PieceMolduArgent
 PotionTest -> Recipient : prendre
+activate Recipient
 PotionTest <-- Recipient : Recipient
+deactivate Recipient
+PotionTest -> DoseUrineMusaraigne: prendre
+activate DoseUrineMusaraigne
+PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
+deactivate DoseUrineMusaraigne
+PotionTest -> DoseUrineMusaraigne: prendre
+activate DoseUrineMusaraigne
+PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
+deactivate DoseUrineMusaraigne
+PotionTest -> FeuilleSecheTout: prendre
+activate FeuilleSecheTout
+PotionTest <-- FeuilleSecheTout: FeuilleSecheTout
+deactivate FeuilleSecheTout
+
 PotionTest -> Recipient: ajouter(PieceMolduArgent)
-PotionTest -> DoseUrineMusaraigne: prendre
-PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
 PotionTest -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
-PotionTest -> DoseUrineMusaraigne: prendre
-PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
 PotionTest -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 PotionTest -> PotionTest: attendre(5mn)
-PotionTest -> FeuilleSecheTout: prendre
-PotionTest <-- FeuilleSecheTout: FeuilleSecheTout
 PotionTest -> PieceMolduArgent: essuyer(FeuilleSecheTout)
 PotionTest -> PieceMolduArgent: transfomer
-PieceMolduArgent --> PotionTest: PieceOr
+activate PieceMolduArgent
+PotionTest <--> PieceMolduArgent: PieceOr
+deactivate PieceMolduArgent
+deactivate PotionTest
+
 @enduml
