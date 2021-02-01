@@ -1,6 +1,6 @@
 @startuml ProxySequence
 
-Forêt -> SchtroumpfDouanier: saluer(Animal)
+VillageTest -> SchtroumpfDouanier: saluer(Animal)
 SchtroumpfDouanier --> SchtroumpfNormal: saluer(Animal)
 SchtroumpfDouanier --> Forêt: entre ou pas
 
