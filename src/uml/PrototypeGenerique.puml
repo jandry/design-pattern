@@ -1,0 +1,16 @@
+@startuml Todo
+
+class Prototype {
+    + clone() : Prototype
+}
+
+class Client {
+    + operation()
+}
+
+
+Prototype <.. Client: prototype
+Prototype <|-- ConcretePrototype1
+Prototype <|-- ConcretePrototype2
+
+@enduml
