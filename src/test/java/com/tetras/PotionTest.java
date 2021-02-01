@@ -1,5 +1,7 @@
 package com.tetras;
 
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.tetras.ingredient.DoseUrineMusaraigne;
@@ -29,8 +31,8 @@ public class PotionTest {
         piece.couvrir(dose2);
         attendre(5);
         piece.essuyer(feuille);
-        Object result = piece.transformer();
+        PieceOr result = piece.transformer();
         //
-        assertTrue(result instanceof PieceOr);
+        assertNotNull(result);
     }
 }
