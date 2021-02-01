@@ -5,6 +5,7 @@ interface Forme {
 class Carre
 class Rond
 class Dessin {
+    - formes : List<Forme>
     + ajouter(Forme): void
 }
 
