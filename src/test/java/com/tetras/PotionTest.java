@@ -3,6 +3,7 @@ package com.tetras;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.tetras.ingredient.DoseUrineMusaraigne;
+import com.tetras.ingredient.FeuilleSecheTout;
 import com.tetras.materiel.PieceMolduArgent;
 import com.tetras.materiel.PieceOr;
 import com.tetras.materiel.Recipient;
@@ -17,15 +18,19 @@ public class PotionTest {
 
     @Test
     public void preparerPotionBrilleTout() {
-        PieceMolduArgent piece = new PieceMolduArgent();
-        Recipient recipient = new Recipient();
-        recipient.ajouter(piece);
+        PieceMolduArgent piece = PieceMolduArgent.prendre();
+        Recipient recipient = Recipient.prendre();
+        FeuilleSecheTout feuille = FeuilleSecheTout.prendre();
         DoseUrineMusaraigne dose1 = DoseUrineMusaraigne.prendre();
-        recipient.ajouter(dose1);
         DoseUrineMusaraigne dose2 = DoseUrineMusaraigne.prendre();
-        recipient.ajouter(dose2);
+        //
+        recipient.ajouter(piece);
+        piece.couvrir(dose1);
+        piece.couvrir(dose2);
         attendre(5);
-
-        assertTrue(piece.transformer() instanceof PieceOr);
+        piece.essuyer(feuille);
+        Object result = piece.transformer();
+        //
+        assertTrue(result instanceof PieceOr);
     }
 }

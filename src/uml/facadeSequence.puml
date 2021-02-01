@@ -1,12 +1,18 @@
 @startuml FacadeSequence
 PotionTest -> PieceMolduArgent: prendre
+PotionTest <-- PieceMolduArgent: PieceMolduArgent
 PotionTest -> Recipient : prendre
+PotionTest <-- Recipient : Recipient
 PotionTest -> Recipient: ajouter(PieceMolduArgent)
 PotionTest -> DoseUrineMusaraigne: prendre
+PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
 PotionTest -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 PotionTest -> DoseUrineMusaraigne: prendre
+PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
 PotionTest -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 PotionTest -> PotionTest: attendre(5mn)
+PotionTest -> FeuilleSecheTout: prendre
+PotionTest <-- FeuilleSecheTout: FeuilleSecheTout
 PotionTest -> PieceMolduArgent: essuyer(FeuilleSecheTout)
 PotionTest -> PieceMolduArgent: transfomer
 PieceMolduArgent --> PotionTest: PieceOr
