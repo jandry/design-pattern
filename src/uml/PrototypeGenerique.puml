@@ -8,9 +8,12 @@ class Client {
     + operation()
 }
 
+class ConcretePrototype1 #9bca0d
+
+class ConcretePrototype2 #0bca0d
 
 Client .r.> Prototype : prototype
-Prototype <|-- ConcretePrototype1
+Prototype <|-- ConcretePrototype1 
 Prototype <|-- ConcretePrototype2
 
 @enduml
