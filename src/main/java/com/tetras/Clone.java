@@ -34,10 +34,4 @@ public class Clone implements Cloneable{
         }
         return (this.getNom().equals(cloneToCompare.getNom()));
     }
-
-    public Clone clone() {
-        Clone result = new Clone();
-        result.setNom(this.getNom());
-        return result;
-    }
 }
