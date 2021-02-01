@@ -1,14 +1,35 @@
 @startuml FacadeSequence
-Magicien -> PotionBrilleToutFacade: transformer(PieceMolduArgent)
-PotionBrilleToutFacade -> Recipient : prendre
+actor PotionTest
+
+PotionTest -> PieceMolduArgent : prendre
+activate PieceMolduArgent
+PotionTest <-- PieceMolduArgent: PieceMolduArgent
+deactivate PieceMolduArgent
+PotionTest -> Recipient : prendre
+activate Recipient
+PotionTest <-- Recipient : Recipient
+deactivate Recipient
+PotionTest -> DoseUrineMusaraigne: prendre
+activate DoseUrineMusaraigne
+PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
+deactivate DoseUrineMusaraigne
+PotionTest -> DoseUrineMusaraigne: prendre
+activate DoseUrineMusaraigne
+PotionTest <-- DoseUrineMusaraigne: DoseUrineMusaraigne
+deactivate DoseUrineMusaraigne
+PotionTest -> FeuilleSecheTout: prendre
+activate FeuilleSecheTout
+PotionTest <-- FeuilleSecheTout: FeuilleSecheTout
+deactivate FeuilleSecheTout
+
+PotionTest -> PotionBrilleToutFacade: transformer(PieceMolduArgent, Recipient, DoseUrineMusaraigne, DoseUrineMusaraigne, FeuilleSecheTout)
+activate PotionBrilleToutFacade
 PotionBrilleToutFacade -> Recipient: ajouter(PieceMolduArgent)
-PotionBrilleToutFacade -> DoseUrineMusaraigne: prendre
 PotionBrilleToutFacade -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
-PotionBrilleToutFacade -> DoseUrineMusaraigne: prendre
 PotionBrilleToutFacade -> PieceMolduArgent: couvrir(DoseUrineMusaraigne)
 PotionBrilleToutFacade -> PotionBrilleToutFacade: attendre(5mn)
 PotionBrilleToutFacade -> PieceMolduArgent: essuyer(FeuilleSecheTout)
 PotionBrilleToutFacade -> PieceMolduArgent: transfomer
-PieceMolduArgent --> PotionBrilleToutFacade: PieceOr
-PotionBrilleToutFacade --> Magicien: PieceOr
+
+PotionBrilleToutFacade --> PotionTest: PieceOr
 @enduml

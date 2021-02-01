@@ -2,9 +2,11 @@
 
 package com.tetras.ingredient #DDDDDD {
     interface Ingredient
+
     class DoseUrineMusaraigne {
         {static} prendre() : DoseUrineMusaraigne
     }
+
     class FeuilleSecheTout {
         {static} prendre() : FeuilleSecheTout
     }
@@ -15,12 +17,14 @@ package com.tetras.materiel #AAAAAA {
         {static} prendre() : Recipient
         ajouter(ingredient: Ingredient)
     }
+
     class PieceMolduArgent {
         {static} prendre() : PieceMolduArgent
         couvrir(dose: DoseUrineMusaraigne)
         essuyer(feuille: FeuilleSecheTout)
         transformer() : PieceOr
     }
+
     class PieceOr
 }
 
