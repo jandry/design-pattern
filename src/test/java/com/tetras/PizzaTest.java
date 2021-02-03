@@ -7,14 +7,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PizzaTest {
+    
     @Test
     void testCreatePizza() {
         // Reine : champignons, emmental, sauce tomate, jambon
-        PizzaBuilder monPizzaiolo = new PizzaBuilder();
-        monPizzaiolo.addChampignons();
-        monPizzaiolo.addEmmental();
-        monPizzaiolo.addJambon();
-        monPizzaiolo.addSauceTomate();
+        PizzaBuilder monPizzaiolo = new PizzaBuilder().addChampignons().addEmmental().addJambon().addSauceTomate();
 
         Pizza maPizza = monPizzaiolo.build();
         // Test

@@ -16,32 +16,39 @@ public class PizzaBuilder {
 
     private boolean jambon = false;
 
-    public void addJambon() {
+    public PizzaBuilder addJambon() {
         jambon = true;
+        return this;
     }
 
-    public void addChampignons() {
+    public PizzaBuilder addChampignons() {
         champignons = true;
+        return this;
     }
 
-    public void addAnchois() {
+    public PizzaBuilder addAnchois() {
         anchois = true;
+        return this;
     }
 
-    public void addSauceTomate() {
+    public PizzaBuilder addSauceTomate() {
         sauceTomate = true;
+        return this;
     }
 
-    public void addLardons() {
+    public PizzaBuilder addLardons() {
         lardons = true;
+        return this;
     }
 
-    public void addCremeFraiche() {
+    public PizzaBuilder addCremeFraiche() {
         cremeFraiche = true;
+        return this;
     }
 
-    public void addEmmental() {
+    public PizzaBuilder addEmmental() {
         emmental = true;
+        return this;
     }
 
     public Pizza build() {

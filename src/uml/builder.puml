@@ -20,13 +20,13 @@ class PizzaBuilder {
     - champignons: boolean 
     - jambon: boolean 
 
-    + addJambon() : void
-    + addChampignons() : void
-    + addAnchois() : void
-    + addSauceTomate() : void
-    + addLardons() : void
-    + addCremeFraiche() : void
-    + addEmmental : void
+    + addJambon() : PizzaBuilder
+    + addChampignons() : PizzaBuilder
+    + addAnchois() : PizzaBuilder
+    + addSauceTomate() : PizzaBuilder
+    + addLardons() : PizzaBuilder
+    + addCremeFraiche() : PizzaBuilder
+    + addEmmental : PizzaBuilder
     + build() : Pizza
 }
 
