@@ -1,19 +1,19 @@
 @startuml Memento
 
 class Morceau {
-    - nom
+    - nom: String
     + creerMemento(): MementoMorceau
     + restaurer(MementoMorceau)
 }
 
 class MementoMorceau {
-    - nom
+    - nom: String
 }
 
 class LecteurMusique {
     - historiqueMorceau: List<MementoMorceau>
-    + lire(Morceau)
-    + lireMorceauPrecedent()
+    + lire(Morceau): String
+    + lireMorceauPrecedent(): String
 }
 
 @enduml

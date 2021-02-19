@@ -7,17 +7,19 @@ public class LecteurMusique {
 
     List<MementoMorceau> historiqueMorceau = new ArrayList<>();
 
-    public void lire(Morceau morceau) {
-        System.out.println(morceau.getNom());
+    public String lire(Morceau morceau) {
         historiqueMorceau.add(morceau.creerMemento());
+        return morceau.getNom();
     }
 
-    public void lireMorceauPrecedent() {
+    public String lireMorceauPrecedent() {
+        String result = "";
         if (historiqueMorceau.size() >= 2) {
             MementoMorceau memento = historiqueMorceau.get(historiqueMorceau.size() - 2);
             Morceau morceau = new Morceau(memento);
-            System.out.println(morceau.getNom());
+            result = morceau.getNom();
         }
+        return result;
     }
 
 }
