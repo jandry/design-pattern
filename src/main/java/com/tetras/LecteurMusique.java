@@ -1,23 +1,25 @@
 package com.tetras;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class LecteurMusique {
 
-    List<MementoMorceau> historiqueMorceau = new ArrayList<>();
+    Stack<MementoMorceau> stack = new Stack<>();
 
     public String lire(Morceau morceau) {
-        historiqueMorceau.add(morceau.creerMemento());
+        stack.add(morceau.creerMemento());
         return morceau.getNom();
     }
 
     public String lireMorceauPrecedent() {
-        String result = "";
-        if (historiqueMorceau.size() >= 2) {
-            MementoMorceau memento = historiqueMorceau.get(historiqueMorceau.size() - 2);
-            Morceau morceau = new Morceau(memento);
-            result = morceau.getNom();
+        String result = null;
+        if (!stack.isEmpty()) {
+            MementoMorceau memento = stack.pop();
+            if (!stack.isEmpty()) {
+                memento = stack.peek();
+                Morceau morceau = new Morceau(memento);
+                result = morceau.getNom();
+            }
         }
         return result;
     }
