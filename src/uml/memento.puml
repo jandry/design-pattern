@@ -11,7 +11,7 @@ class MementoMorceau {
 }
 
 class LecteurMusique {
-    - historiqueMorceau: List<MementoMorceau>
+    - stack: Stack<MementoMorceau>
     + lire(Morceau): String
     + lireMorceauPrecedent(): String
 }
