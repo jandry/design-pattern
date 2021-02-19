@@ -1,11 +1,11 @@
-@startuml Todo
+@startuml Memento
 
 class Morceau {
-    - nom
+    - nom : String
 }
 
 class LecteurMusique {
-    + lire(Morceau)
+    + lire(Morceau): String
 }
 
 @enduml
