@@ -29,8 +29,8 @@ class DemandeRecuperationPierreInfinite {
 
 class PierreInfinite
 
-interface Avengers {
-    + boolean gagneCombatContre(Personnage)
+interface Avenger {
+    + gagneCombatContre(Personnage): boolean
 }
 
 Ironman .up.|> Avenger
