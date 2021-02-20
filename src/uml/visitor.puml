@@ -9,9 +9,8 @@ class ElementTexte {
     + getTexte(): String
 }
 
-ElementTexte <|-- Liste
-ElementTexte <|-- Titre
-ElementTexte <|-- Gras
-
+Liste -up-|> ElementTexte
+Titre -up-|> ElementTexte
+Gras -up-|> ElementTexte
 
 @enduml
