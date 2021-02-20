@@ -12,4 +12,8 @@ public class ElementTexte {
         return texte;
     }
 
+    public String getHtml() {
+        return texte;
+    }
+
 }
