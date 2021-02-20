@@ -1,0 +1,20 @@
+@startuml Listener
+
+class Match {
+    - support: PropertyChangeSupport
+    - faitJeu: FaitJeu
+    + genererFait(): FaitJeu
+    + addPropertyChangeListener(PropertyChangeListener)
+    + removePropertyChangeListener(PropertyChangeListener)
+}
+
+class FaitJeu
+
+class Arbitre {
+    + analyser(FaitJeu)
+    + propertyChange(PropertyChangeEvent)
+}
+
+Arbitre..|>PropertyChangeListener
+
+@enduml

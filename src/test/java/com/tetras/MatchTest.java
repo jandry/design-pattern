@@ -32,10 +32,10 @@ public class MatchTest {
     @Test
     public void testMatch() {
         Match match = new Match();
-        match.addObserver(new Arbitre());
-        match.addObserver(new Arbitre());
-        match.addObserver(new Arbitre());
-        match.addObserver(new Arbitre());
+        match.addPropertyChangeListener(new Arbitre());
+        match.addPropertyChangeListener(new Arbitre());
+        match.addPropertyChangeListener(new Arbitre());
+        match.addPropertyChangeListener(new Arbitre());
         match.genererFait();
 
         String result = outContent.toString() + errContent.toString();

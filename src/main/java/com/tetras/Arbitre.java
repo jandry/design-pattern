@@ -1,11 +1,10 @@
 package com.tetras;
 
-import java.util.Observable;
-import java.util.Observer;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.Random;
 
-@SuppressWarnings("deprecation")
-public class Arbitre implements Observer {
+public class Arbitre implements PropertyChangeListener {
 
     public void analyser(final FaitJeu fait) {
         final Random random = new Random();
@@ -16,10 +15,7 @@ public class Arbitre implements Observer {
         }
     }
 
-    @Override
-    public void update(Observable o, Object fait) {
-        analyser((FaitJeu) fait);
-
+    public void propertyChange(PropertyChangeEvent evt) {
+        analyser((FaitJeu) evt.getNewValue());
     }
-
 }

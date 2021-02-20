@@ -1,15 +1,27 @@
 package com.tetras;
 
-import java.util.Observable;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
-@SuppressWarnings("deprecation")
-public class Match extends Observable {
+public class Match {
 
-    public FaitJeu genererFait() {
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+
+    private FaitJeu fait = new FaitJeu();
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        support.removePropertyChangeListener(listener);
+    }
+
+    public void genererFait() {
         FaitJeu fait = new FaitJeu();
-        setChanged();
-        notifyObservers(fait);
-        return fait;
+        support.firePropertyChange("fait", this.fait, fait);
+        this.fait = fait;
     }
 
 }
