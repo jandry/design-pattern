@@ -2,10 +2,10 @@ package com.tetras.brawler;
 
 public class Frank {
 
-    public void activerEponge() {
+    public String activerEponge() {
     }
 
-    public void activerTourDeForce() {
+    public String activerTourDeForce() {
     }
 
 }

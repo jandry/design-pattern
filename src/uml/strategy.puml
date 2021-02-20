@@ -1,8 +1,8 @@
 @startuml Strategy
 
 class Frank {
-    activerTourDeForce()
-    activerEponge()
+    activerTourDeForce(): String
+    activerEponge(): String
 }
 
 @enduml
