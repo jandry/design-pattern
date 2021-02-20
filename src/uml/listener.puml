@@ -15,6 +15,7 @@ class Arbitre {
     + propertyChange(PropertyChangeEvent)
 }
 
-Arbitre..|>PropertyChangeListener
+Arbitre .up.|> PropertyChangeListener
+FaitJeu -left-o Match
 
 @enduml
