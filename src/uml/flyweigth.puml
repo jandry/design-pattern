@@ -1,0 +1,13 @@
+@startuml Flyweigth
+
+class Particule {
+    - x: int
+    - y: int
+    - z: int
+    - type: String
+    - sprite: Byte[]
+    + dessiner()
+    + getTailleEnByte()
+}
+
+@enduml
