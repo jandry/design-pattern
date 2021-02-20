@@ -4,6 +4,7 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class Arbitre implements Observer {
 
     public void analyser(final FaitJeu fait) {
