@@ -13,9 +13,9 @@ interface State  {
 class NormalState
 class IronmanState
 
-NormalState ..|> State
-IronmanState ..|> State
-TonyStark ..|> State
+NormalState .up.|> State
+IronmanState .up.|> State
+TonyStark .up.|> State
 TonyStark o-- State
 
 @enduml
