@@ -1,21 +1,21 @@
 @startuml Observer
 
 class Observer<E> {
-    + notify(element: E)
+    + notify(E)
 }
 
 class Match {
     - listeFaitJeu: List<FaitJeu>
     + genererFait(): FaitJeu
-    + register(observer: Observer<FaitJeu>)
+    + register(Observer<FaitJeu>)
 }
 
 class FaitJeu
 
 class Arbitre {
-    + analyser(fait: FaitJeu)
+    + analyser(FaitJeu)
 }
 
-Arbitre..|>Observer
+Arbitre .up.|> Observer
 
 @enduml

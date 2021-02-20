@@ -19,7 +19,7 @@ end note
 class ConcreteObserverA
 class ConcreteObserverB
 
-ConcreteObserverA..|>Observer
-ConcreteObserverB..|>Observer
+ConcreteObserverA .up.|> Observer
+ConcreteObserverB .up.|> Observer
 
 @enduml

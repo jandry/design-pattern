@@ -21,7 +21,7 @@ class Arbitre {
     + analyser(fait: FaitJeu)
 }
 
-Arbitre..|>Observer
-Match--|>Observable
+Arbitre .up.|> Observer
+Match -up-|> Observable
 
 @enduml
