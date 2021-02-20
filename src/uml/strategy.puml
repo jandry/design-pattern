@@ -4,11 +4,11 @@ class Frank {
 }
 
 interface Brawler {
-    + activerStarPower(StarPowerStrategy)
+    + activerStarPower(StarPowerStrategy): String
 }
 
 interface StarPowerStrategy {
-    + activer()
+    + activer(): String
 }
 
 Frank .up.|> Brawler
