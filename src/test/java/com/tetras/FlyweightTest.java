@@ -18,31 +18,26 @@ public class FlyweightTest {
         int tailleTotale = 0;
         int nbParticule = 100;
         for (int i = 0; i < nbParticule; i++) {
-            String type = null;
-            Byte[] sprite = null;
-            switch (i % 3) {
-                case 0:
-                    type = "proton";
-                    sprite = new Byte[] { 1, 3, 4 };
-
-                    break;
-                case 1:
-                    type = "neutron";
-                    sprite = new Byte[] { 5, 4, 9, 1 };
-                    break;
-                case 2:
-                    type = "electron";
-                    sprite = new Byte[] { 10, 6, 3, 7 };
-                    break;
-                default:
-                    throw new RuntimeException("not possible");
-            }
-            Particule p = new Particule(new Random().nextInt(), new Random().nextInt(), new Random().nextInt(), type,
-                    sprite);
+            Particule p = new Particule(new Random().nextInt(), new Random().nextInt(), new Random().nextInt(),
+                    choisirType(i));
             listeParticule.add(p);
             tailleTotale += p.getTailleEnByte();
         }
+        tailleTotale += TypeParticuleFactory.getTailleEnByte();
         System.out.println(MessageFormat.format("Taille pour {0} particules : {1} Bytes", nbParticule, tailleTotale));
+    }
+
+    private String choisirType(int i) {
+        switch (i % 3) {
+            case 0:
+                return "proton";
+            case 1:
+                return "neutron";
+            case 2:
+                return "electron";
+            default:
+                throw new RuntimeException("not possible");
+        }
     }
 
 }

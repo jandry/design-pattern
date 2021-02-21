@@ -4,10 +4,27 @@ class Particule {
     - x: int
     - y: int
     - z: int
-    - type: String
-    - sprite: Byte[]
+    - type: TypeParticule
     + dessiner()
     + getTailleEnByte()
 }
+
+class TypeParticule {
+    - x: int
+    - y: int
+    - z: int
+    - type: String
+    - sprite: Byte[]
+    + getTailleEnByte()
+}
+
+class TypeParticuleFactory {
+    {static} - cache: Map<String, TypeParticule>
+    {static} + getTypeParticule(String): TypeParticule
+    {static} - compute(String): TypeParticule
+    {static} + getTailleEnByte(): int
+}
+
+Particule o-right- TypeParticule
 
 @enduml
