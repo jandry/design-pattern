@@ -12,7 +12,6 @@ class Observable {
 
 class Match {
     + genererFait(): FaitJeu
-    + register(observer: Observer<FaitJeu>)
 }
 
 class FaitJeu
@@ -21,7 +20,7 @@ class Arbitre {
     + analyser(fait: FaitJeu)
 }
 
-Arbitre..|>Observer
-Match--|>Observable
+Arbitre .up.|> Observer
+Match -up-|> Observable
 
 @enduml
