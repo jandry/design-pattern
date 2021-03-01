@@ -16,9 +16,9 @@ interface Component {
 class ConcreteComponent {
 }
 
-ConcreteDecorator..|>Decorator
-ConcreteComponent..|>Component
-Decorator..|>Component
+ConcreteDecorator ..|> Decorator
+ConcreteComponent ..|> Component
+Decorator ..|> Component
 Decorator o.. Component
 
 @enduml

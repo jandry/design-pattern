@@ -12,12 +12,13 @@ class SchtroumpfCoquet {
 
 class SchtroumpfDecorator {
     - schtroumpf: Schtroumpf
+    + SchtroumpfDecorator(Schtroumpf)
     + saluer()
     + direAuRevoir()
 }
 
-SchtroumpfGrognon-|>Schtroumpf
-SchtroumpfCoquet-|>Schtroumpf
-SchtroumpfDecorator-|>Schtroumpf
+SchtroumpfGrognon .up.|> Schtroumpf
+SchtroumpfCoquet .up.|> Schtroumpf
+SchtroumpfDecorator .up.|> Schtroumpf
 
 @enduml{}
