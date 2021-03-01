@@ -12,12 +12,13 @@ class Ado {
     venirATableEnRalant()
 }
 
-interface Personne
 
 class ATableCommande {
     execute(personne: Personne)
 }
 
-Enfant..|>Personne
-Ado..|>Personne
+Maman --> ATableCommande : utilise
+ATableCommande --> Ado : utilise
+ATableCommande --> Enfant : utilise
+
 @enduml

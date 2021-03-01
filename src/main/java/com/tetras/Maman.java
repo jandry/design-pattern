@@ -2,6 +2,7 @@ package com.tetras;
 
 public class Maman {
 
-    public void appelerATable(Personne personne) {
+    public String appelerATable(Object personne) {
+        return "";
     }
 }

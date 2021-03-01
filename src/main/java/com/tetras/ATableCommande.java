@@ -2,7 +2,7 @@ package com.tetras;
 
 public class ATableCommande {
 
-    public void executer(Personne personne) {
-
+    public String executer(Object personne) {
+        return "";
     }
 }
