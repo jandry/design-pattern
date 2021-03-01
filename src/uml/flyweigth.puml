@@ -10,9 +10,6 @@ class Particule {
 }
 
 class TypeParticule {
-    - x: int
-    - y: int
-    - z: int
     - type: String
     - sprite: Byte[]
     + getTailleEnByte()

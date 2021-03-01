@@ -1,0 +1,33 @@
+@startuml Flyweigth
+
+class Flyweigth {
+    - repeatingState
+    + Flyweigth(repeatingSate)
+}
+
+class Client
+
+class Context {
+    - uniqueState
+    - flyweigth: Flyweigth
+    + Context(uniqueState,repeatingSate)
+    + operation()
+}
+
+note right
+this.uniqueState = uniqueState
+this.flyweigth = FlyweigthFactory.getFlyweigth(repeatingState)
+end note
+
+class FlyweigthFactory {
+    {static} - cache: Map<Key, Flyweigth>
+    {static} + getFlyweigth(Key): Flyweigth
+}
+
+Context o-down- Flyweigth
+
+Context -down-> FlyweigthFactory : uses
+
+Client -down-> Context : uses
+
+@enduml
