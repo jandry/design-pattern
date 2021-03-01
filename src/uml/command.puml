@@ -1,20 +1,20 @@
 @startuml Command
 
 class Maman {
-    appelerATable(personne: Personne)
+    appelerATable(Object): String
 }
 
 class Enfant {
-    venirATableAQuatrePatte()
+    venirATableAQuatrePatte(): String
 }
 
 class Ado {
-    venirATableEnRalant()
+    venirATableEnRalant(): String
 }
 
 
 class ATableCommande {
-    execute(personne: Personne)
+    execute(Object): String
 }
 
 Maman --> ATableCommande : utilise
