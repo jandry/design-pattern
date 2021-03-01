@@ -1,21 +1,17 @@
 @startuml ChainOfResponsability
 
-interface Personnage {
-    + recupererPierreInfinite(Temple): PierreInfinite
-    + compterPierreGant(): int
-}
-
-class Thanos {
+abstract BadGuy {
     - gant: List<PierreInfinite>
     + recupererPierreInfinite(Temple): PierreInfinite
     + compterPierreGant(): int
 }
 
-class BlackDwarf {
-}
+class Thanos
 
-BlackDwarf .up.|> Personnage
-Thanos .up.|> Personnage
+class BlackDwarf
+
+BlackDwarf -up-|> BadGuy
+Thanos -up-|> BadGuy
 
 class Temple {
     - protecteurs: List<Avengers>
@@ -26,6 +22,8 @@ class Temple {
 class DemandeRecuperationPierreInfinite {
     - demandeur: Personnage
 }
+
+Temple -down-> DemandeRecuperationPierreInfinite : utilise 
 
 class PierreInfinite
 

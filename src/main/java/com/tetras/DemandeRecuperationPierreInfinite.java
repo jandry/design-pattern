@@ -2,13 +2,13 @@ package com.tetras;
 
 public class DemandeRecuperationPierreInfinite {
 
-    private Personnage recuperateur;
+    private BadGuy recuperateur;
 
-    public Personnage getRecuperateur() {
+    public BadGuy getRecuperateur() {
         return recuperateur;
     }
 
-    public void setRecuperateur(Personnage recuperateur) {
+    public DemandeRecuperationPierreInfinite(BadGuy recuperateur) {
         this.recuperateur = recuperateur;
     }
 

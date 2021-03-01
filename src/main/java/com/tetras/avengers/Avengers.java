@@ -1,9 +1,9 @@
 package com.tetras.avengers;
 
-import com.tetras.Personnage;
+import com.tetras.BadGuy;
 
 public interface Avengers {
 
-    public boolean gagneCombatContre(Personnage personnage);
+    public boolean gagneCombatContre(BadGuy personnage);
 
 }

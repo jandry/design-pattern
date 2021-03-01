@@ -1,11 +1,11 @@
 package com.tetras.avengers;
 
-import com.tetras.Personnage;
+import com.tetras.BadGuy;
 
 public class Thor implements Avengers {
 
     @Override
-    public boolean gagneCombatContre(Personnage personnage) {
+    public boolean gagneCombatContre(BadGuy personnage) {
         return false;
     }
 
