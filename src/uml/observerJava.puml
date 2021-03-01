@@ -12,7 +12,6 @@ class Observable {
 
 class Match {
     + genererFait(): FaitJeu
-    + register(observer: Observer<FaitJeu>)
 }
 
 class FaitJeu
