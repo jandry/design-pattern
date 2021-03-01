@@ -1,0 +1,21 @@
+@startuml Command
+
+class Invocateur {
+    + declencherEvenement()
+}
+
+interface Commande {
+    + executer()
+}
+
+class CommandeImplementation
+
+class Recepteur {
+    + faireAction()
+}
+
+Invocateur -right-> Commande: utilise
+CommandeImplementation .up.|> Commande
+CommandeImplementation -right-> Recepteur: executer-> faireAction
+
+@enduml
