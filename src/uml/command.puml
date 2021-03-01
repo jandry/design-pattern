@@ -9,6 +9,6 @@ class Enfant {
     venirATable()
 }
 
-Maman-->Enfant: appelerATable->monEnfantvenirATable
+Maman --> Enfant: appelerATable->monEnfantvenirATable
 
 @enduml
