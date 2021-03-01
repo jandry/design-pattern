@@ -2,11 +2,11 @@
 
 class Maman {
     monEnfant: Enfant
-    appelerATable()
+    appelerATable() : String
 }
 
 class Enfant {
-    venirATable()
+    venirATable() : String
 }
 
 Maman --> Enfant: appelerATable->monEnfantvenirATable

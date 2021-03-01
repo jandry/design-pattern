@@ -1,7 +1,8 @@
 package com.tetras;
 
 public class Enfant {
-    public void venirATable() {
-        System.out.print("J'arrive");
+
+    public String venirATable() {
+        return "J'arrive";
     }
 }
