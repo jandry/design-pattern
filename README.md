@@ -1,38 +1,57 @@
 # design-pattern
-Exemples d'implémentation des design patterns en java.
+Exemples d'implémentation des Design Patterns en Java.
 
 # Mise en place
 ## Prérequis
-Pour l'utiliser avec vscode suivre les instructions suivantes:
-* Si vous ne l'avez pas installer Java https://openjdk.java.net/install/
-* Si vous ne l'avez pas installez Visual Studio Code https://code.visualstudio.com/download
+* [Java 11](https://adoptium.net/?variant=openjdk11&jvmVariant=hotspot)
+* [Visual Studio Code](https://code.visualstudio.com/download)
 
-## Installation
+## Récupération des sources
 * Aller dans un répertoire de travail
-* Ovrez un bash et lancez les commandes suivantes
+* Ouvrez un bash et lancez les commandes suivantes
 ```bash
 git clone https://github.com/jandry/design-pattern.git
 cd design-pattern
 code .
 ```
+
+## Configuration à la première ouverture avec VSCode
 * Une fois VSCode ouvert installez les extensions suivantes:
   * Pour Java
-    * Language Support for Java(TM) by Red Hat
-    * Java Dependency Viewer
-    * Java Extension Pack
-    * Java Test Runner
+    *
+    * [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+    * [Java IDE](https://marketplace.visualstudio.com/items?itemName=YouMayCallMeV.vscode-java-saber)
   * Pour build Gradle
-    * Gradle Language Support
-    * Gradle Tasks
-    * Kotlin Language
+    * [Gradle Extension Pack](https://marketplace.visualstudio.com/items?itemName=richardwillis.vscode-gradle-extension-pack)
   * Pour diagram UML
-    * PlantUML
-    * PlantUML Previewer
-
-## Utilisation
-Dans un bash tapez
-```bash
-./gradlew build
+    * [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
+    * [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+* Contenu minimum recommandé pour `settings.json`
+```
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.home": "C:\\Program Files\\Java\\jdk-11.0.12",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "files.autoSave": "afterDelay",
+}
+```
+* Contenu minimum recommandé pour `.bashrc`
+```
+export TERM=cygwin
+export JAVA_HOME="/c/Program Files/Java/jdk-11.0.12"
+export PATH=$JAVA_HOME/bin:$PATH
+echo $JAVA_HOME
 ```
 
-
+## Build & test
+Dans un bash tapez
+```bash
+./gradlew test
+```
