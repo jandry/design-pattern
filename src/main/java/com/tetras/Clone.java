@@ -1,5 +1,8 @@
 package com.tetras;
 
+import java.nio.charset.Charset;
+import java.util.Random;
+
 public class Clone {
     private String nom;
 
@@ -9,6 +12,14 @@ public class Clone {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public Clone() {
+        byte[] array = new byte[7];
+        new Random().nextBytes(array);
+        nom = new String(array, Charset.forName("UTF-8"));
+        System.out.println("Clone: " + getNom());
+
     }
 
     public boolean equals(Object objectToCompare) {

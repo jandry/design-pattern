@@ -1,7 +1,9 @@
-@startuml Todo
+@startuml Prototype
 
 class Clone {
     - nom : String
+    + Clone()
+    + getNom() : String
     + equals(Object) : boolean
 }
 
