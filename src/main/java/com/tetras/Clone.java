@@ -23,21 +23,22 @@ public class Clone implements Cloneable {
     }
 
     public boolean equals(Object objectToCompare) {
-        if (objectToCompare==null)
+        if (objectToCompare == null)
             return false;
         if (!this.getClass().getName().equals(objectToCompare.getClass().getName())) {
             return false;
         }
         Clone cloneToCompare = (Clone) objectToCompare;
-        if (this.getNom()==null) {
-            return (cloneToCompare.getNom() ==null);
+        if (this.getNom() == null) {
+            return (cloneToCompare.getNom() == null);
         }
         return (this.getNom().equals(cloneToCompare.getNom()));
     }
 
-    public Clone clone() {
-        Clone result = new Clone();
-        result.setNom(this.getNom());
-        return result;
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        super.clone();
+        this.setNom(this.getNom());
+        return this;
     }
 }

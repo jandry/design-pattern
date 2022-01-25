@@ -4,7 +4,11 @@ public class TransportDeTroupes {
     private Clone cloneOriginal = new Clone();
 
     public Clone sortirClone() {
-        return cloneOriginal.clone();
+        try {
+            return (Clone) cloneOriginal.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
-    
+
 }
