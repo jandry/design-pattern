@@ -2,7 +2,6 @@
 
 class Clone {
     - nom : String
-    + Clone()
     + equals(Object) : boolean
 }
 
