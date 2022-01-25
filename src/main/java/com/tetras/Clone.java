@@ -1,8 +1,5 @@
 package com.tetras;
 
-import java.nio.charset.Charset;
-import java.util.Random;
-
 public class Clone {
     private String nom;
 
