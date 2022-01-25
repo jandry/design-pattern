@@ -4,7 +4,7 @@ class Clone {
     - nom : String
     + Clone()
     + equals(Object) : boolean
-    + clone() : Clone
+    + clone() : Object
 }
 
 class TransportDeTroupes {
