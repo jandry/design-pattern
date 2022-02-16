@@ -9,6 +9,6 @@ class Enfant {
     venirATable() : String
 }
 
-Maman --> Enfant: appelerATable->monEnfantvenirATable
+Maman --> Enfant: appelerATable->monEnfant.venirATable()
 
 @enduml
