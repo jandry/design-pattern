@@ -1,10 +1,10 @@
 @startuml ChainOfResponsability
 
-Personnage -> DemandeRecuperationPierreInfinite : new
-Personnage <-- DemandeRecuperationPierreInfinite
-Personnage -> Temple : recupererPierreInfinite(DemandeRecuperationPierreInfinite)
-Temple -> Avengers : gagneCombatContre(Personnage)
+BadGuy -> DemandeRecuperationPierreInfinite : new
+BadGuy <-- DemandeRecuperationPierreInfinite
+BadGuy -> Temple : recupererPierreInfinite(DemandeRecuperationPierreInfinite)
+Temple -> Avengers : gagneCombatContre(BadGuy)
 Temple <-- Avengers : false / true
-Personnage <-- Temple : PierreInfinite / null
+BadGuy <-- Temple : PierreInfinite / null
 
 @enduml

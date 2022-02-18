@@ -15,7 +15,7 @@ public class Temple {
 
     public PierreInfinite recupererPierreInfinite(DemandeRecuperationPierreInfinite demande) {
         for (Avengers avengers : protecteurs) {
-            if (avengers.gagneCombatContre(demande.getRecuperateur())) {
+            if (avengers.gagneCombatContre(demande.getDemandeur())) {
                 return null;
             }
         }

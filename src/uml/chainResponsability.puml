@@ -20,7 +20,7 @@ class Temple {
 }
 
 class DemandeRecuperationPierreInfinite {
-    - demandeur: Personnage
+    - demandeur: BadGuy
 }
 
 Temple -down-> DemandeRecuperationPierreInfinite : utilise 
@@ -28,7 +28,7 @@ Temple -down-> DemandeRecuperationPierreInfinite : utilise
 class PierreInfinite
 
 interface Avenger {
-    + gagneCombatContre(Personnage): boolean
+    + gagneCombatContre(BadGuy): boolean
 }
 
 Ironman .up.|> Avenger
