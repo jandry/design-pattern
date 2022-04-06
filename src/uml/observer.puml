@@ -5,7 +5,7 @@ class Observer<E> {
 }
 
 class Match {
-    - listeFaitJeu: List<FaitJeu>
+    - listeObserver: List<Observer<FaitJeu>>
     + genererFait(): FaitJeu
     + register(observer: Observer<FaitJeu>)
 }
