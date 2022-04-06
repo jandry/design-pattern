@@ -19,13 +19,13 @@ class IteratorEpisode {
     - listeEpisode: List<Episode>
 }
 
-interface Iterator<E> {
-    + next(): E
+interface Iterator<Episode> {
+    + next(): Episode
     + hasNext(): boolean
 }
 
-interface Iterable<E> {
-    + iterator(): Iterator<E>
+interface Iterable<Episode> {
+    + iterator(): Iterator<Episode>
 }
 
 Serie..|>Iterable

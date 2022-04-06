@@ -14,8 +14,8 @@ class Episode {
     + toString(): String
 }
 
-class Iterator<E> {
-    + next(): E
+class Iterator<Episode> {
+    + next(): Episode
     + hasNext(): boolean
 }
 
