@@ -10,14 +10,14 @@ public class LecteurMusiqueTest {
     @Test
     public void testLecture() {
         Morceau cannonball = new Morceau("cannonball");
-        Morceau loser = new Morceau("loser");
+        Morceau looser = new Morceau("loser");
         Morceau walkOnTheWildSide = new Morceau("walk on wild side");
         //
         LecteurMusique lecteur = new LecteurMusique();
         assertEquals(cannonball.getNom(), lecteur.lire(cannonball));
-        assertEquals(loser.getNom(), lecteur.lire(loser));
+        assertEquals(looser.getNom(), lecteur.lire(looser));
         assertEquals(walkOnTheWildSide.getNom(), lecteur.lire(walkOnTheWildSide));
-        assertEquals(loser.getNom(), lecteur.lireMorceauPrecedent());
+        assertEquals(looser.getNom(), lecteur.lireMorceauPrecedent());
         assertEquals(cannonball.getNom(), lecteur.lireMorceauPrecedent());
         assertNull(lecteur.lireMorceauPrecedent());
     }
